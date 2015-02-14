@@ -1,0 +1,200 @@
+/* BASE STYLES
+============================================================================= */
+
+body {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	font-size: 110%;
+	/* prevent copy paste, to allow, change 'none' to 'text' */
+	
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* prevent callout to copy image, etc when tap to hold */
+	
+	-webkit-touch-callout: none;
+	-khtml-touch-callout: none;
+	-moz-touch-callout: none;
+	-ms-touch-callout: none;
+	touch-callout: none;
+	/* prevent webkit from resizing text to fit */
+	
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+}
+body {
+	background: url(../../img/background1-blur.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+	overflow: hidden;
+}
+body {
+	height: 100%;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+a {
+	color: #f37878;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h3,
+h5,
+h6 {
+	font-weight: 200;
+	text-rendering: optimizelegibility;
+	color: #000;
+}
+p {
+	color: #000;
+	margin: -15px 0 20px 0;
+	line-height: 140%;
+	font-weight: 300;
+	font-size: 100%;
+	text-rendering: optimizelegibility;
+}
+/* mobile positoning guides */
+
+.outer {
+	display: table;
+	position: absolute;
+	height: 90%;
+	width: 100%;
+}
+.middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+.inner {
+	margin: 0 auto;
+	width: 300px;
+	height: 380px;
+	text-align: center;
+}
+.safearea-popup {
+	position: relative;
+	width: 280px;
+	height: 360px;
+	margin: 0 auto;
+	margin: 75px 0px 0 0px;
+	border: 0px dashed #aaa;
+	background-color: #eee;
+}
+.safearea {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	margin: 25px 7px 0 7px;
+}
+.content {
+	width: 90%;
+	min-width: 100px;
+	max-width: 500px;
+	margin: 10px auto;
+}
+/* PAGE  SPECIFIC CSS
+============================================================================= */
+
+.page-enter1 {} .page-enter2 {} .page-buyer-profile3 {
+	@-webkit-keyframes myfirst {
+		0% {
+			background-size: 0px 0px;
+			opacity: .4;
+		}
+		80% {
+			background-size: 200px 180px;
+			opacity: 100;
+		}
+		99% {
+			background-size: 40px 35px;
+			opacity: 0;
+		}
+		100% {
+			background-size: 40px 35px;
+			opacity: 0;
+		}
+	}
+	.heart-reveal-small {
+		position: absolute;
+		width: 310px;
+		height: 280px;
+		background: url(img/heart.png) center center;
+		background-size: 310px 280px;
+		/*background-repeat: no-repeat;*/
+		
+		-webkit-animation: myfirst 0.7s;
+		/* Chrome, Safari, Opera */
+		
+		opacity: 0.0;
+		display: none;
+		z-index: 500;
+	}
+}
+.page-profile3 {}
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave {
+	z-index: 20;
+	-webkit-animation: slideOutLeft 0.4s both ease-in;
+	-moz-animation: slideOutLeft 0.4s both ease-in;
+	animation: slideOutLeft 0.4s both ease-in;
+}
+.page.ng-enter {
+	z-index: 10;
+	-webkit-animation: slideInRight 0.4s both ease-in;
+	-moz-animation: slideInRight 0.4s both ease-in;
+	animation: slideInRight 0.4s both ease-in;
+}
+/* slide in from the right */
+
+@keyframes slideInRight {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@-moz-keyframes slideInRight {
+	from {
+		-moz-transform: translateX(100%);
+	}
+	to {
+		-moz-transform: translateX(0);
+	}
+}
+@-webkit-keyframes slideInRight {
+	from {
+		-webkit-transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+/* slide in from the bottom */
+
+@keyframes slideOutLeft {
+	to {
+		transform: translateX(-100%);
+	}
+}
+@-moz-keyframes slideOutLeft {
+	to {
+		-moz-transform: translateX(-100%);
+	}
+}
+@-webkit-keyframes slideOutLeft {
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}

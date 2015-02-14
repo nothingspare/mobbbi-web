@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <base href="/">
+    <meta charset="utf-8">
+    <meta name="fragment" content="!" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mobbbi</title>
+
+    <!-- Save to home screen icon image links -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://imageshack.com/a/img838/8456/lyzi.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://imageshack.com/a/img823/1299/o8xm.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://imageshack.com/a/img713/6718/hal8.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://imagizer.imageshack.us/v2/114x114q90/690/galb.jpg">
+
+    <!-- Responsive and mobile friendly stuff -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Facebook stuff -->
+    <meta property="og:title" content="Mobbbi" />
+    <meta property="og:type" content="mobile site" />
+    <meta property="og:url" content="https://mobbbi.com" />
+    <meta property="og:image" content="../../assets/page-preview.jpg" />
+    <meta property="fb:admins" content="574026598" />
+    <meta property="fb:page_id" content="100942423298296" />
+    <meta property="og:description" content="Customize your own m-commerce store in minutes. Then share it with your network as your own app." />
+
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="custom.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="vendor/angular-motion/dist/angular-motion.min.css">
+    <link rel="stylesheet" href="vendor/AngularJS-Toaster/toaster.css">
+    <style>
+        .view-animate-container {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body class="ng-cloak" style="overflow-y: scroll">
+
+    <!--[if lte IE 9]>
+<p class="browsehappy">
+    Похоже, вы используете <strong>устаревшую версию</strong> Internet Explorer. <a href="http://browsehappy.com/">Обновите
+    свой браузер</a>.
+</p>
+<![endif]-->
+    <div ng-view class="page {{pageClass}}"></div>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
+
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-i18n/angular-locale_ru.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/AngularJS-Toaster/toaster.js"></script>
+
+    <script src="app.js"></script>
+    <script src="modules/item/controllers/ItemCtrl.js"></script>
+    <script src="modules/post/controllers/PostCtrl.js"></script>
+    <script src="modules/site/controllers/SiteCtrl.js"></script>
+
+</body>
+
+</html>

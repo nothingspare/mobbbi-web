@@ -1,0 +1,15 @@
+RewriteEngine off
+RewriteBase /
+
+
+#HTML5 Video
+AddType audio/ogg .oga
+AddType video/ogg .ogv .ogg
+AddType video/mp4 .mp4
+AddType video/webm .webm
+
+# iOS Wireless App Install
+AddType application/octet-stream .ipa
+AddType text/xml .plist
+
+AddType application/pdf .pdf

@@ -11,17 +11,31 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider', function($lo
         controller: 'SiteLogin'
     })
 
-    // .when('/login', {
-    //     templateUrl: modulesPath + '/site/views/login.html',
-    //     controller: 'SiteLogin'
-    // })
-
     .when('/item', {
-        templateUrl: modulesPath + '/item/views/index.html',
-        controller: 'ItemIndex',
+            templateUrl: modulesPath + '/item/views/index.html',
+            controller: 'ItemIndex',
+            resolve: {
+                status: function() {
+                    return 1;
+                }
+            }
+        })
+        .when('/itemgrid', {
+            templateUrl: modulesPath + '/item/views/item-grid.html',
+            controller: 'ItemGridIndex',
+            resolve: {
+                status: function() {
+                    return 1;
+                }
+            }
+        })
+
+    .when('/profile', {
+        templateUrl: modulesPath + '/profile/views/index.html',
+        controller: 'ProfileIndex',
         resolve: {
             status: function() {
-                return 1;
+                return 2;
             }
         }
     })
@@ -78,22 +92,6 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider', function($lo
     $httpProvider.interceptors.push('authInterceptor');
 }]);
 
-// app.controller('enter1Controller', function($scope) {
-//     $scope.pageClass = 'page-enter1';
-// });
-
-// app.controller('enter2Controller', function($scope) {
-//     $scope.pageClass = 'page-enter2';
-// });
-
-// app.controller('buyerprofile3Controller', function($scope) {
-//     $scope.pageClass = 'page-buyerprofile3';
-// });
-
-// app.controller('profile3Controller', function($scope) {
-//     $scope.pageClass = 'page-profile3';
-// });
-
 app.factory('authInterceptor', function($q, $window) {
     return {
         request: function(config) {
@@ -106,7 +104,7 @@ app.factory('authInterceptor', function($q, $window) {
         },
         responseError: function(rejection) {
             if (rejection.status === 401) {
-                $window.location = 'login';
+                $window.location = '/';
             }
             return $q.reject(rejection);
         }
@@ -162,6 +160,32 @@ app
             },
 
             template: '<a href="login" ng-if="isGuest">Login</a>'
+        }
+    }])
+    .directive('autoActive', ['$location', function($location) {
+        return {
+            restrict: 'A',
+            scope: false,
+            link: function(scope, element) {
+                function setActive() {
+                    var path = $location.path();
+                    if (path) {
+                        angular.forEach(element.find('li'), function(li) {
+                            var anchor = li.querySelector('a');
+                            if (anchor.href.match(path + '(?=\\?|$)')) {
+                                angular.element(li).addClass('active');
+                            }
+                            else {
+                                angular.element(li).removeClass('active');
+                            }
+                        });
+                    }
+                }
+
+                setActive();
+
+                scope.$on('$locationChangeSuccess', setActive);
+            }
         }
     }])
     .filter('checkmark', function() {

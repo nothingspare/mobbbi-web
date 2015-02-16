@@ -143,58 +143,58 @@ p {
 /* ANIMATIONS
 ============================================================================= */
 
-.page.ng-leave {
-	z-index: 20;
-	-webkit-animation: slideOutLeft 0.4s both ease-in;
-	-moz-animation: slideOutLeft 0.4s both ease-in;
-	animation: slideOutLeft 0.4s both ease-in;
-}
-.page.ng-enter {
-	z-index: 10;
-	-webkit-animation: slideInRight 0.4s both ease-in;
-	-moz-animation: slideInRight 0.4s both ease-in;
-	animation: slideInRight 0.4s both ease-in;
-}
+/*.page.ng-leave {*/
+/*	z-index: 20;*/
+/*	-webkit-animation: slideOutLeft 0.4s both ease-in;*/
+/*	-moz-animation: slideOutLeft 0.4s both ease-in;*/
+/*	animation: slideOutLeft 0.4s both ease-in;*/
+/*}*/
+/*.page.ng-enter {*/
+/*	z-index: 10;*/
+/*	-webkit-animation: slideInRight 0.4s both ease-in;*/
+/*	-moz-animation: slideInRight 0.4s both ease-in;*/
+/*	animation: slideInRight 0.4s both ease-in;*/
+/*}*/
 /* slide in from the right */
 
-@keyframes slideInRight {
-	from {
-		transform: translateX(100%);
-	}
-	to {
-		transform: translateX(0);
-	}
-}
-@-moz-keyframes slideInRight {
-	from {
-		-moz-transform: translateX(100%);
-	}
-	to {
-		-moz-transform: translateX(0);
-	}
-}
-@-webkit-keyframes slideInRight {
-	from {
-		-webkit-transform: translateX(100%);
-	}
-	to {
-		-webkit-transform: translateX(0);
-	}
-}
+/*@keyframes slideInRight {*/
+/*	from {*/
+/*		transform: translateX(100%);*/
+/*	}*/
+/*	to {*/
+/*		transform: translateX(0);*/
+/*	}*/
+/*}*/
+/*@-moz-keyframes slideInRight {*/
+/*	from {*/
+/*		-moz-transform: translateX(100%);*/
+/*	}*/
+/*	to {*/
+/*		-moz-transform: translateX(0);*/
+/*	}*/
+/*}*/
+/*@-webkit-keyframes slideInRight {*/
+/*	from {*/
+/*		-webkit-transform: translateX(100%);*/
+/*	}*/
+/*	to {*/
+/*		-webkit-transform: translateX(0);*/
+/*	}*/
+/*}*/
 /* slide in from the bottom */
 
-@keyframes slideOutLeft {
-	to {
-		transform: translateX(-100%);
-	}
-}
-@-moz-keyframes slideOutLeft {
-	to {
-		-moz-transform: translateX(-100%);
-	}
-}
-@-webkit-keyframes slideOutLeft {
-	to {
-		-webkit-transform: translateX(-100%);
-	}
-}
+/*@keyframes slideOutLeft {*/
+/*	to {*/
+/*		transform: translateX(-100%);*/
+/*	}*/
+/*}*/
+/*@-moz-keyframes slideOutLeft {*/
+/*	to {*/
+/*		-moz-transform: translateX(-100%);*/
+/*	}*/
+/*}*/
+/*@-webkit-keyframes slideOutLeft {*/
+/*	to {*/
+/*		-webkit-transform: translateX(-100%);*/
+/*	}*/
+/*}*/

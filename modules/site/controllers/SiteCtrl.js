@@ -22,4 +22,14 @@ app
                 $location.path("/item");
             }).error(errorCallback);
         };
+    }])
+    .controller('SiteHeader', ['$scope', '$window', '$location', function($scope, $window, $location) {
+        $scope.logout = function() {
+            $window.sessionStorage.removeItem('_auth');
+            $location.path("/");
+        };
+        
+        $scope.profile = function(){
+            $location.path("/profile");
+        };
     }]);

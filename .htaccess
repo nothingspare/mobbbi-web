@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+  # Options +SymLinksIfOwnerMatch
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=/?(.+)$ [NC]
+    RewriteRule ^ snapshots/%1.html? [NC,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !index
+    RewriteCond %{REQUEST_URI} !.*\.(css|js|html|png)
+    RewriteRule (.*) index.html [L]
+
+</IfModule>

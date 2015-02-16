@@ -57,7 +57,9 @@
     свой браузер</a>.
 </p>
 <![endif]-->
-    <div ng-view class="page {{pageClass}}"></div>
+
+    <div ng-view class="page {{pageClass}} am-fade-and-slide-left"></div>
+
     <toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
 
     <script src="vendor/angular/angular.js"></script>
@@ -68,6 +70,7 @@
     <script src="vendor/AngularJS-Toaster/toaster.js"></script>
 
     <script src="app.js"></script>
+    <script src="modules/profile/controllers/ProfileCtrl.js"></script>
     <script src="modules/item/controllers/ItemCtrl.js"></script>
     <script src="modules/post/controllers/PostCtrl.js"></script>
     <script src="modules/site/controllers/SiteCtrl.js"></script>

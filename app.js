@@ -1,92 +1,122 @@
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate', 'toaster', 'ngSanitize']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize']);
 
-app.config(['$locationProvider', '$routeProvider', '$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
+app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider) {
 
-    var modulesPath = 'modules';
+    var modulesPath = '/modules';
 
-    $routeProvider
+    $urlRouterProvider.otherwise('/');
 
-        .when('/', {
-        templateUrl: modulesPath + '/site/views/main.html',
-        controller: 'SiteLogin'
-    })
-
-    .when('/item', {
-            templateUrl: modulesPath + '/item/views/index.html',
-            controller: 'ItemIndex',
-            resolve: {
-                status: function() {
-                    return 1;
-                }
-            }
-        })
-        .when('/itemgrid', {
-            templateUrl: modulesPath + '/item/views/item-grid.html',
-            controller: 'ItemGridIndex',
-            resolve: {
-                status: function() {
-                    return 1;
-                }
-            }
-        })
-
-    .when('/profile', {
-        templateUrl: modulesPath + '/profile/views/index.html',
-        controller: 'ProfileIndex',
-        resolve: {
-            status: function() {
-                return 2;
-            }
-        }
-    })
-
-    .when('/post/published', {
-        templateUrl: modulesPath + '/post/views/index.html',
-        controller: 'PostIndex',
-        resolve: {
-            status: function() {
-                return 2;
-            }
-        }
-    })
-
-    .when('/post/draft', {
-        templateUrl: modulesPath + '/post/views/index.html',
-        controller: 'PostIndex',
-        resolve: {
-            status: function() {
-                return 1;
-            }
-        }
-    })
-
-    .when('/post/create', {
-        templateUrl: modulesPath + '/post/views/form.html',
-        controller: 'PostCreate'
-    })
-
-    .when('/post/:id/edit', {
-        templateUrl: modulesPath + '/post/views/form.html',
-        controller: 'PostEdit'
-    })
-
-    .when('/post/:id/delete', {
-        templateUrl: modulesPath + '/post/views/delete.html',
-        controller: 'PostDelete'
-    })
-
-    .when('/post/:id', {
-        templateUrl: modulesPath + '/post/views/view.html',
-        controller: 'PostView'
-    })
-
-    .when('/404', {
-        templateUrl: '404.html'
-    })
-
-    .otherwise({
-        redirectTo: '/404'
+    $stateProvider.state('main', {
+        url: '/',
+        controller: 'SiteLogin',
+        templateUrl: modulesPath + '/site/views/main.html'
     });
+    $stateProvider.state('item', {
+        url: '/item',
+        controller: 'ItemIndex',
+        templateUrl: modulesPath + '/item/views/index.html'
+    });
+
+    $stateProvider.state('grid', {
+        url: '/grid',
+        controller: 'ItemGridIndex',
+        templateUrl: modulesPath + '/item/views/item-grid.html'
+    });
+
+    $stateProvider.state('location', {
+        url: '/location',
+        controller: 'LocationIndex',
+        templateUrl: modulesPath + '/location/views/index.html'
+    });
+    
+    $stateProvider.state('profile', {
+        url: '/profile',
+        controller: 'ProfileIndex',
+        templateUrl: modulesPath + '/profile/views/index.html'
+    });
+
+
+    // .when('/', {
+    //     templateUrl: modulesPath + '/site/views/main.html',
+    //     controller: 'SiteLogin'
+    // })
+
+    // .when('/item', {
+    //         templateUrl: modulesPath + '/item/views/index.html',
+    //         controller: 'ItemIndex',
+    //         resolve: {
+    //             status: function() {
+    //                 return 1;
+    //             }
+    //         }
+    //     })
+    //     .when('/itemgrid', {
+    //         templateUrl: modulesPath + '/item/views/item-grid.html',
+    //         controller: 'ItemGridIndex',
+    //         resolve: {
+    //             status: function() {
+    //                 return 1;
+    //             }
+    //         }
+    //     })
+
+    // .when('/profile', {
+    //     templateUrl: modulesPath + '/profile/views/index.html',
+    //     controller: 'ProfileIndex',
+    //     resolve: {
+    //         status: function() {
+    //             return 2;
+    //         }
+    //     }
+    // })
+
+    // .when('/post/published', {
+    //     templateUrl: modulesPath + '/post/views/index.html',
+    //     controller: 'PostIndex',
+    //     resolve: {
+    //         status: function() {
+    //             return 2;
+    //         }
+    //     }
+    // })
+
+    // .when('/post/draft', {
+    //     templateUrl: modulesPath + '/post/views/index.html',
+    //     controller: 'PostIndex',
+    //     resolve: {
+    //         status: function() {
+    //             return 1;
+    //         }
+    //     }
+    // })
+
+    // .when('/post/create', {
+    //     templateUrl: modulesPath + '/post/views/form.html',
+    //     controller: 'PostCreate'
+    // })
+
+    // .when('/post/:id/edit', {
+    //     templateUrl: modulesPath + '/post/views/form.html',
+    //     controller: 'PostEdit'
+    // })
+
+    // .when('/post/:id/delete', {
+    //     templateUrl: modulesPath + '/post/views/delete.html',
+    //     controller: 'PostDelete'
+    // })
+
+    // .when('/post/:id', {
+    //     templateUrl: modulesPath + '/post/views/view.html',
+    //     controller: 'PostView'
+    // })
+
+    // .when('/404', {
+    //     templateUrl: '404.html'
+    // })
+
+    // .otherwise({
+    //     redirectTo: '/404'
+    // });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
     $httpProvider.interceptors.push('authInterceptor');
@@ -114,7 +144,7 @@ app.factory('authInterceptor', function($q, $window) {
 app.value('app-version', '0.2.0');
 
 // Need set url REST Api in controller!
-app.service('rest', function($http, $location, $routeParams) {
+app.service('rest', function($http, $location, $stateParams) {
 
     return {
 
@@ -126,10 +156,10 @@ app.service('rest', function($http, $location, $routeParams) {
         },
 
         model: function() {
-            if ($routeParams.expand != null) {
-                return $http.get(this.baseUrl + this.path + "/" + $routeParams.id + '?expand=' + $routeParams.expand);
+            if ($stateParams.expand != null) {
+                return $http.get(this.baseUrl + this.path + "/" + $stateParams.id + '?expand=' + $stateParams.expand);
             }
-            return $http.get(this.baseUrl + this.path + "/" + $routeParams.id);
+            return $http.get(this.baseUrl + this.path + "/" + $stateParams.id);
         },
 
         get: function() {
@@ -141,7 +171,7 @@ app.service('rest', function($http, $location, $routeParams) {
         },
 
         putModel: function(model) {
-            return $http.put(this.baseUrl + this.path + "/" + $routeParams.id, model);
+            return $http.put(this.baseUrl + this.path + "/" + $stateParams.id, model);
         },
 
         deleteModel: function() {
@@ -160,32 +190,6 @@ app
             },
 
             template: '<a href="login" ng-if="isGuest">Login</a>'
-        }
-    }])
-    .directive('autoActive', ['$location', function($location) {
-        return {
-            restrict: 'A',
-            scope: false,
-            link: function(scope, element) {
-                function setActive() {
-                    var path = $location.path();
-                    if (path) {
-                        angular.forEach(element.find('li'), function(li) {
-                            var anchor = li.querySelector('a');
-                            if (anchor.href.match(path + '(?=\\?|$)')) {
-                                angular.element(li).addClass('active');
-                            }
-                            else {
-                                angular.element(li).removeClass('active');
-                            }
-                        });
-                    }
-                }
-
-                setActive();
-
-                scope.$on('$locationChangeSuccess', setActive);
-            }
         }
     }])
     .filter('checkmark', function() {

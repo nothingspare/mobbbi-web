@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li>
-                <a ng-click = "profile()">
+                <a ui-sref="profile">
                     <div class="fast-tap user"></div>   
                     <h4></h4>
                 </a>
@@ -48,10 +48,10 @@
 
 <div id="container2">
 	<div id="navigation2">
-		<ul auto-active>
-			<li><a href="/itemgrid"><div class="fast-tap gridstream"></div></a></li>
-			<li><a href="/item"><div class="fast-tap stream"></div></a></li>
-			<li><a href="location.html"><div class="fast-tap location"></div></a></li>
+		<ul>
+			<li><a ui-sref-active="menu-item-active" ui-sref="grid"><div class="gridstream"></div></a></li>
+			<li><a ui-sref-active="menu-item-active" ui-sref="item"><div class="stream"></div></a></li>
+			<li><a ui-sref-active="menu-item-active" ui-sref="location"><div class="location"></div></a></li>
 		</ul>
 	</div>
 </div> 

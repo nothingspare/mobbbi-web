@@ -1,5 +1,5 @@
 app
-    .controller('ItemIndex', ['$scope', 'rest', 'toaster', '$sce', 'status', '$filter', '$window', '$location', function($scope, rest, toaster, $sce, status, $filter, $window, $location) {
+    .controller('ItemIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', function($scope, rest, toaster, $sce, $filter, $window) {
 
         $scope.pageClass = 'page-buyerprofile3';
 
@@ -14,7 +14,7 @@ app
             $scope.items = data;
         }).error(errorCallback);
     }])
-    .controller('ItemGridIndex', ['$scope', 'rest', 'toaster', '$sce', 'status', '$filter', '$window', '$location', function($scope, rest, toaster, $sce, status, $filter, $window, $location) {
+    .controller('ItemGridIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', '$location', function($scope, rest, toaster, $sce, $filter, $window, $location) {
 
         $scope.pageClass = 'page-buyerprofile1';
 

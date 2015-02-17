@@ -1,7 +1,8 @@
 app
-    .controller('SiteLogin', ['$scope', 'rest', 'toaster', '$window', '$location', function($scope, rest, toaster, $window, $location) {
+    .controller('SiteLogin', ['$scope', 'rest', 'toaster', '$window', '$state', function($scope, rest, toaster, $window, $state) {
+        console.log('Login Controller Initialized');
 
-        if ($window.sessionStorage._auth) $location.path("/item");
+        if ($window.sessionStorage._auth) $state.go('item');
 
         $scope.pageClass = 'page-enter1';
 
@@ -19,7 +20,7 @@ app
             rest.postModel($scope.model).success(function(data) {
                 $window.sessionStorage._auth = data;
                 toaster.pop('success', "Success");
-                $location.path("/item");
+                $state.go('item');
             }).error(errorCallback);
         };
     }])

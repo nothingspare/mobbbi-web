@@ -58,18 +58,20 @@
 </p>
 <![endif]-->
 
-    <div ng-view class="page {{pageClass}} am-fade-and-slide-left"></div>
+    <div ui-view class="page {{pageClass}} am-fade-and-slide-left"></div>
 
     <toaster-container toaster-options="{'position-class': 'toast-top-right'}"></toaster-container>
 
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-i18n/angular-locale_ru.js"></script>
-    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!--<script src="vendor/angular-route/angular-route.min.js"></script>-->
     <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
     <script src="vendor/angular-animate/angular-animate.min.js"></script>
     <script src="vendor/AngularJS-Toaster/toaster.js"></script>
 
     <script src="app.js"></script>
+    <script src="modules/location/controllers/LocationCtrl.js"></script>
     <script src="modules/profile/controllers/ProfileCtrl.js"></script>
     <script src="modules/item/controllers/ItemCtrl.js"></script>
     <script src="modules/post/controllers/PostCtrl.js"></script>

@@ -2646,3 +2646,8 @@ input,
 		content: ">";
 	}
 	/* - - - - - - - - - - angular.js slider styling end - - - - - - - - - - */
+	
+	.menu-item-active {
+		background: rgba(0, 0, 0, 0.3);
+		color: #fff;
+	}

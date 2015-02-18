@@ -16,6 +16,18 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
         controller: 'ItemIndex',
         templateUrl: modulesPath + '/item/views/index.html'
     });
+    
+    $stateProvider.state('itemview', {
+        url: '/itemview/:id',
+        controller: 'ItemView',
+        templateUrl: modulesPath + '/item/views/view.html'
+    });
+    
+    $stateProvider.state('profile', {
+        url: '/profile',
+        controller: 'ProfileIndex',
+        templateUrl: modulesPath + '/profile/views/index.html'
+    });
 
     $stateProvider.state('grid', {
         url: '/grid',
@@ -28,13 +40,6 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
         controller: 'LocationIndex',
         templateUrl: modulesPath + '/location/views/index.html'
     });
-    
-    $stateProvider.state('profile', {
-        url: '/profile',
-        controller: 'ProfileIndex',
-        templateUrl: modulesPath + '/profile/views/index.html'
-    });
-
 
     // .when('/', {
     //     templateUrl: modulesPath + '/site/views/main.html',

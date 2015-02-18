@@ -14,7 +14,7 @@ app
             $scope.items = data;
         }).error(errorCallback);
     }])
-    .controller('ItemGridIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', '$location', function($scope, rest, toaster, $sce, $filter, $window, $location) {
+    .controller('ItemGridIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', function($scope, rest, toaster, $sce, $filter) {
 
         $scope.pageClass = 'page-buyerprofile1';
 
@@ -32,4 +32,25 @@ app
             }).error(errorCallback);
 
         }
+    }])
+    .controller('ItemView', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', function($scope, rest, toaster, $sce, $filter, $window) {
+        rest.path = 'v1/items';
+
+        $scope.item = {};
+
+        var errorCallback = function(data) {
+            toaster.clear();
+            if (data.status == undefined) {
+                angular.forEach(data, function(error) {
+                    toaster.pop('error', "Field: " + error.field, error.message);
+                });
+            }
+            else {
+                toaster.pop('error', "code: " + data.code + " " + data.name, data.message);
+            }
+        };
+
+        rest.model().success(function(data) {
+            $scope.item = data;
+        }).error(errorCallback);
     }]);

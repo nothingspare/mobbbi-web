@@ -1,42 +1,61 @@
-<div class="btn-group pull-right">
-    <a class="btn btn-primary" ng-href="post/{{post.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a>
-    <a class="btn btn-danger" ng-href="post/{{post.id}}/delete"><span class="glyphicon glyphicon-remove"></span></a>
+ <div class="item-container">
+        <div class="rowfree">
+            <div class="heartoverimage3 heart-reveal hidden"></div>
+        </div>
+        <div class="stream-item-pic">
+
+            <a href="buyer-item.html">
+                <div id="item-large-pic"><img ng-src="{{item.image_url}}" />
+                </div>
+            </a>
+
+
+            <p id="heart-position"><span class="heart-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">454 </b>
+            </p>
+
+            <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">In-store </b>
+            </p>
+
+            <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">${{item.price}}</b>
+            </p>
+
+            <p id="message-position"><span class="message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="seller-name-text">MyBoutique </b>{{item.description}}</p>
+
+            <!--<div class="leavecomment" style=" margin: 10px 0 10px 10px; "><a href="#" style="color: #f37878; text-decoration: none !important;">Leave comment</a>
+		</div> -->
+            <br>
+
+            <div class="seemorecontainer">
+                <div class="fast-tap seemore" style=" margin: -28px 8px 4px -10px; text-align: right;"><span>See comments...</span>
+                </div>
+
+                <div class="seemorecontent">
+                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">BeckyFoster </b>What sort of a discount will you do if we buy more than one?</p>
+
+                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">NickyLaser </b>Cool</p>
+
+                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">DanKeen </b>This looks like exactly what I have been looking for. Before I head over can I ask how many you have?</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="icon-cirle-wapper" style="margin-bottom: 10px; padding: 1px;">
+            <a href="#">
+                <div id="heart2">
+                    <div class="heart-circle" style=""></div>
+                </div>
+            </a>
+            <a href="#">
+                <div id="message2">
+                    <div class="fast-tap buyer-message-circle" style=""></div>
+                </div>
+            </a>
+            <a href="buyer-item.html?open=buySection">
+                <div id="message2">
+                    <div class="fast-tap buy-circle" style=""></div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
-<h1>{{post.title}}</h1>
-<h5 class="sub-header">Author - {{post.author.username}}. Updated - {{post.updated_at}}</h5>
-
-<div ng-bind-html="post.content"></div>
-
-<p></p>
-<div class="badge badge-important">{{post.tags}}</div>
-
-<hr>
-<ul ng-show="post.comments" class="list-group">
-    Comments:
-    <li ng-repeat="comment in post.comments | orderBy:'id' : true" class="list-group-item am-fade-and-scale">
-
-        <strong>{{comment.created_at}}</strong>
-
-        <button class="btn btn-danger btn-xs" ng-click="deleteComment(comment)">
-            <span class="glyphicon glyphicon-remove"></span>
-        </button>
-
-        <hr>
-        <div ng-bind-html="comment.content"></div>
-    </li>
-</ul>
-
-<a ng-hide="post.comments" href="post/{{post.id}}?expand=comments">show comments</a>
-
-<hr>
-
-<h4>New comment</h4>
-<div class="form-group">
-    <textarea class="form-control" ng-model="post.comment.content"></textarea>
-</div>
-<button class="btn" ng-click="addComment()">Add comment</button>
-<hr>
-<details>
-    <summary>JSON DATA</summary>
-    <pre>{{post | json}}</pre>
-</details>

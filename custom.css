@@ -2239,16 +2239,16 @@ input,
 	display: inline;
 }
 #textfield1 {
-	width: 60px;
+	width: 57px;
 }
 #textfield2 {
 	width: 35px;
 }
 #textfield3 {
-	width: 55px;
+	width: 35px;
 }
 #textfield4 {
-	width: 140px;
+	width: 119px;
 }
 #textfield5 {
 	width: 67px;
@@ -2345,7 +2345,7 @@ input,
 	/*  - - - example start - - - - */
 	
 	.example {
-		padding: 20px 0px 0px 75px;
+		padding: 55px 0px 0px 75px;
 		position: absolute;
 		text-align: center;
 	}
@@ -2423,8 +2423,8 @@ input,
 		width: 260px;
 	}
 	.crop-btn {
-		float-right;
-		margin: -36px 0px 0px 170px;
+		/*float:right;*/
+		margin: -60px 0px 0px 228px;
 		width: 60px;
 	}
 	/*	cropper styling begins here...
@@ -2607,9 +2607,6 @@ input,
 		padding: 0 2px;
 		color: #fff;
 	}
-	.rn-carousel-indicator span:before {
-		content: "\25cf";
-	}
 	.rn-carousel-indicator span.ng-leave {
 		-webkit-transition: none !important;
 		transition: none !important;
@@ -2650,4 +2647,37 @@ input,
 	.menu-item-active {
 		background: rgba(0, 0, 0, 0.3);
 		color: #fff;
+	}
+	.itemview-icon-cirle-wapper {
+		position: relative;
+		margin: 0 auto;
+		padding: 1px;
+		pading-top: -10px;
+		text-align: center;
+		width: 312px;
+		height: 55px;
+		background: rgba(255, 255, 255, 0.5);
+		margin-bottom: 20px;
+	}
+	.itemview-stream-item-pic {
+		position: relative;
+		margin: 0 auto;
+		width: 310px;
+		margin-bottom: 0px;
+		padding: 2px;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	.profile-slider {
+		width: 310px;
+		height: 390px;
+		font-size: 0;
+	}
+	.switch-blue,
+	ul.safearea a {
+		background-color:
+		/*blue*/
+		
+		#f37878;
+		border-radius: 4px;
+		box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0;
 	}

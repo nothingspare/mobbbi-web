@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel']);
 
 app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider) {
 
@@ -40,88 +40,6 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
         controller: 'LocationIndex',
         templateUrl: modulesPath + '/location/views/index.html'
     });
-
-    // .when('/', {
-    //     templateUrl: modulesPath + '/site/views/main.html',
-    //     controller: 'SiteLogin'
-    // })
-
-    // .when('/item', {
-    //         templateUrl: modulesPath + '/item/views/index.html',
-    //         controller: 'ItemIndex',
-    //         resolve: {
-    //             status: function() {
-    //                 return 1;
-    //             }
-    //         }
-    //     })
-    //     .when('/itemgrid', {
-    //         templateUrl: modulesPath + '/item/views/item-grid.html',
-    //         controller: 'ItemGridIndex',
-    //         resolve: {
-    //             status: function() {
-    //                 return 1;
-    //             }
-    //         }
-    //     })
-
-    // .when('/profile', {
-    //     templateUrl: modulesPath + '/profile/views/index.html',
-    //     controller: 'ProfileIndex',
-    //     resolve: {
-    //         status: function() {
-    //             return 2;
-    //         }
-    //     }
-    // })
-
-    // .when('/post/published', {
-    //     templateUrl: modulesPath + '/post/views/index.html',
-    //     controller: 'PostIndex',
-    //     resolve: {
-    //         status: function() {
-    //             return 2;
-    //         }
-    //     }
-    // })
-
-    // .when('/post/draft', {
-    //     templateUrl: modulesPath + '/post/views/index.html',
-    //     controller: 'PostIndex',
-    //     resolve: {
-    //         status: function() {
-    //             return 1;
-    //         }
-    //     }
-    // })
-
-    // .when('/post/create', {
-    //     templateUrl: modulesPath + '/post/views/form.html',
-    //     controller: 'PostCreate'
-    // })
-
-    // .when('/post/:id/edit', {
-    //     templateUrl: modulesPath + '/post/views/form.html',
-    //     controller: 'PostEdit'
-    // })
-
-    // .when('/post/:id/delete', {
-    //     templateUrl: modulesPath + '/post/views/delete.html',
-    //     controller: 'PostDelete'
-    // })
-
-    // .when('/post/:id', {
-    //     templateUrl: modulesPath + '/post/views/view.html',
-    //     controller: 'PostView'
-    // })
-
-    // .when('/404', {
-    //     templateUrl: '404.html'
-    // })
-
-    // .otherwise({
-    //     redirectTo: '/404'
-    // });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
     $httpProvider.interceptors.push('authInterceptor');

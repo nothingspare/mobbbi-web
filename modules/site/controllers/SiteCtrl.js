@@ -17,6 +17,10 @@ app
         };
 
         $scope.login = function() {
+            if (!$scope.model) {
+                toaster.pop('error', "Wrong login or password");
+                return;
+            }
             rest.postModel($scope.model).success(function(data) {
                 $window.sessionStorage._auth = data;
                 toaster.pop('success', "Success");
@@ -29,8 +33,8 @@ app
             $window.sessionStorage.removeItem('_auth');
             $location.path("/");
         };
-        
-        $scope.profile = function(){
+
+        $scope.profile = function() {
             $location.path("/profile");
         };
     }]);

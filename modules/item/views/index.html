@@ -9,7 +9,8 @@
         <div class="stream-item-pic">
 
             <a ui-sref="itemview({ id: item.id })">
-                <div id="item-large-pic"><img ng-src="{{item.image_url}}" />
+                <div id="item-large-pic" ng-style="{'background-image': 'url(' + item.image_url + ')'}">
+                    <!--<img ng-src="{{item.image_url}}" />-->
                 </div>
             </a>
 
@@ -20,10 +21,10 @@
             <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">In-store </b>
             </p>
 
-            <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">$458 </b>
+            <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">{{item.price}}</b>
             </p>
 
-            <p id="message-position"><span class="message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="seller-name-text">MyBoutique </b>Vintage pair of 80's Cazals still in the original box.</p>
+            <p id="message-position"><span class="message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="seller-name-text">MyBoutique </b>{{item.description}}</p>
 
             <!--<div class="leavecomment" style=" margin: 10px 0 10px 10px; "><a href="#" style="color: #f37878; text-decoration: none !important;">Leave comment</a>
 		</div> -->

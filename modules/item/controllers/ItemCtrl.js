@@ -52,5 +52,27 @@ app
 
         rest.model().success(function(data) {
             $scope.item = data;
+            $scope.slides = data.images;
         }).error(errorCallback);
+
+        $scope.save = function() {
+            rest.putModel($scope.item).success(function() {
+
+                toaster.pop('success', "Saved");
+
+            }).error(errorCallback);
+        };
+
+    }])
+    .controller('ItemViewTabsCtrl', ['$scope', function($scope) {
+
+        $scope.currentTab = 'modules/item/views/view-tab-comment.html';
+
+        $scope.onClickTab = function(tab) {
+            $scope.currentTab = tab.url;
+        }
+
+        $scope.isActiveTab = function(tabUrl) {
+            return tabUrl == $scope.currentTab;
+        }
     }]);

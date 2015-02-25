@@ -1,61 +1,44 @@
- <div class="item-container">
-        <div class="rowfree">
-            <div class="heartoverimage3 heart-reveal hidden"></div>
+<div class="rowfree">
+    <div class="heartoverimage3 heart-reveal hidden"></div>
+</div>
+
+<div class="itemview-stream-item-pic">
+    <div id="item-large-pic">
+        <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-controls rn-carousel-index="carouselIndex" class="my-slider">
+            <li ng-repeat="image in slides">
+                <img ng-src="{{image.image_url}}" />
+            </li>
+        </ul>
+        <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides" rn-carousel-index="carouselIndex" style="margin-top: -25px;"></div>
+    </div>
+
+    <p id="heart-position"><span class="heart-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">454 </b>
+    </p>
+
+    <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">In-store </b>
+    </p>
+
+    <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">${{item.price}}</b>
+    </p>
+</div>
+
+<div ng-controller="ItemViewTabsCtrl">
+    <div class="itemview-icon-cirle-wapper">
+        <div id="message2" ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-comment.html'})">
+            <div class="message-circle"></div>
         </div>
-        <div class="stream-item-pic">
-
-            <a href="buyer-item.html">
-                <div id="item-large-pic"><img ng-src="{{item.image_url}}" />
-                </div>
-            </a>
-
-
-            <p id="heart-position"><span class="heart-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">454 </b>
-            </p>
-
-            <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">In-store </b>
-            </p>
-
-            <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">${{item.price}}</b>
-            </p>
-
-            <p id="message-position"><span class="message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="seller-name-text">MyBoutique </b>{{item.description}}</p>
-
-            <!--<div class="leavecomment" style=" margin: 10px 0 10px 10px; "><a href="#" style="color: #f37878; text-decoration: none !important;">Leave comment</a>
-		</div> -->
-            <br>
-
-            <div class="seemorecontainer">
-                <div class="fast-tap seemore" style=" margin: -28px 8px 4px -10px; text-align: right;"><span>See comments...</span>
-                </div>
-
-                <div class="seemorecontent">
-                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">BeckyFoster </b>What sort of a discount will you do if we buy more than one?</p>
-
-                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">NickyLaser </b>Cool</p>
-
-                    <p id="message-position" style=" margin: 5px 8px 0px 0px; text-align: right;"><span class="buyer-message-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="buyer-name-text">DanKeen </b>This looks like exactly what I have been looking for. Before I head over can I ask how many you have?</p>
-                </div>
-
-            </div>
+        <div id="message2" ng-click="onClickTab({title: 'Two', url: 'modules/item/views/view-tab-log.html'})">
+            <div class="buy-circle"></div>
         </div>
-
-        <div id="icon-cirle-wapper" style="margin-bottom: 10px; padding: 1px;">
-            <a href="#">
-                <div id="heart2">
-                    <div class="heart-circle" style=""></div>
-                </div>
-            </a>
-            <a href="#">
-                <div id="message2">
-                    <div class="fast-tap buyer-message-circle" style=""></div>
-                </div>
-            </a>
-            <a href="buyer-item.html?open=buySection">
-                <div id="message2">
-                    <div class="fast-tap buy-circle" style=""></div>
-                </div>
-            </a>
+        <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
+            <div class="promote-circle"></div>
         </div>
+        <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
+            <div class="edit-circle"></div>
+        </div>
+    </div>
+
+    <div id="mainView" style="clear:both;">
+        <div class="am-fade-and-slide-left" ng-include="currentTab"></div>
     </div>
 </div>

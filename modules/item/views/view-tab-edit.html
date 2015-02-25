@@ -1,0 +1,65 @@
+<div class="rowfree">
+    <div class="reveal6 item-transaction-section">
+        <div id="heart2">
+            <div class="edit-circle">
+            </div>
+        </div>
+        <center>
+            <form class="form-horizontal" role="form">
+                <div id="content-popup">
+                    <div style="margin: 70px 0px 20px 0px;"><a href="#" class="fast-tap btn sml">&nbsp;Edit item pics&nbsp;</a>
+                    </div>
+
+                    <div class="upload-pic-previews-wrapper">
+                        <div class="upload-pic-previews"></div>
+                        <div class="upload-pic-previews"></div>
+                        <div class="upload-pic-previews"></div>
+                        <div class="upload-pic-previews"></div>
+                        <div class="upload-pic-previews"></div>
+                    </div>
+
+                    <div style="margin: 20px 0px 0px 0px;">
+                        <textarea ng-model="item.description" class="input item-desicription-input" placeholder="Item description"></textarea>
+                    </div>
+
+                    <div style="margin: 0px 0px 0px 0px;">
+                        <input ng-model="item.price" type="number" class="input" placeholder="Price:"></input>
+                    </div>
+
+                    <div style="margin: 0px 0px 0px 0px;">
+                        <input ng-model="item.size" type="text" class="input" placeholder="Size:"></input>
+                    </div>
+
+                    <div style="margin: 0px 0px 0px 0px;">
+                        <input ng-model="item.quantity" type="number" class="input" placeholder="Quantity:"></input>
+                    </div>
+
+                    <div style="width: 100%; margin: 6px 0 0px 0;">
+                        <select class="selector1" style="margin: -2px 0 20px 0; width: 220px;">
+                            <option value="">Category</option>
+                            <option value="1">Accessories</option>
+                            <option value="2">Bags</option>
+                            <option value="3">Casual</option>
+                            <option value="4">Coats</option>
+                            <option value="5">Dresses</option>
+                            <option value="6">Hats</option>
+                            <option value="7">Trousers</option>
+                            <option value="8">Shoes</option>
+                            <option value="9">Sports</option>
+                            <option value="10">Suits</option>
+                            <option value="11">Sunglasses</option>
+                            <option value="12">Swimwear</option>
+                        </select>
+                    </div>
+
+                    <div style="margin: 10px 0px 20px 0px;"><a ng-click="save()" class="fast-tap btn sml">&nbsp;Post changes&nbsp;</a>
+                    </div>
+
+                    <div style="margin: 30px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete item&nbsp;</a>
+                    </div>
+
+
+        </center>
+        </form>
+        </div>
+    </div>

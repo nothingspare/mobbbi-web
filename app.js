@@ -1,6 +1,7 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer']);
 
-app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider) {
+app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$authProvider', 'API_URL',
+    function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
 
     var modulesPath = '/modules';
 
@@ -16,13 +17,13 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
         controller: 'ItemIndex',
         templateUrl: modulesPath + '/item/views/index.html'
     });
-    
+
     $stateProvider.state('itemview', {
         url: '/itemview/:id',
         controller: 'ItemView',
         templateUrl: modulesPath + '/item/views/view.html'
     });
-    
+
     $stateProvider.state('profile', {
         url: '/profile',
         controller: 'ProfileIndex',
@@ -41,9 +42,16 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
         templateUrl: modulesPath + '/location/views/index.html'
     });
 
+    $authProvider.facebook({
+        clientId: '352496064951251',
+        url: API_URL + 'v1/user/auth',
+    });
+
     $locationProvider.html5Mode(true).hashPrefix('!');
     $httpProvider.interceptors.push('authInterceptor');
 }]);
+
+app.constant('API_URL', 'https://mobbbi-api-tairezzzz-1.c9.io/rest/web/');
 
 app.factory('authInterceptor', function($q, $window) {
     return {

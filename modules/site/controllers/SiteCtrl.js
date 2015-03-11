@@ -1,5 +1,5 @@
 app
-    .controller('SiteLogin', ['$scope', 'rest', 'toaster', '$window', '$state', function($scope, rest, toaster, $window, $state) {
+    .controller('SiteLogin', ['$scope', 'rest', 'toaster', '$window', '$state', '$auth', function($scope, rest, toaster, $window, $state, $auth) {
         console.log('Login Controller Initialized');
 
         if ($window.sessionStorage._auth) $state.go('item');
@@ -17,6 +17,9 @@ app
         };
 
         $scope.login = function() {
+
+            rest.path = 'v1/user/login';
+
             if (!$scope.model) {
                 toaster.pop('error', "Wrong login or password");
                 return;
@@ -27,6 +30,19 @@ app
                 $state.go('item');
             }).error(errorCallback);
         };
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider).then(function(res) {
+        $window.sessionStorage._auth = res.data.token;
+        toaster.pop('success', "Success");
+        $state.go('item');
+      }, handleError);
+    };
+
+    function handleError(err) {
+      toaster.pop('error', err.message);
+    }
+
     }])
     .controller('SiteHeader', ['$scope', '$window', '$location', function($scope, $window, $location) {
         $scope.logout = function() {

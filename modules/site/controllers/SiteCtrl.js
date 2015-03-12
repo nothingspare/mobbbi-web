@@ -1,5 +1,5 @@
 app
-    .controller('SiteLogin', ['$scope', 'rest', 'toaster', '$window', '$state', '$auth', function($scope, rest, toaster, $window, $state, $auth) {
+    .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function($scope, $rootScope, rest, toaster, $window, $state, $auth) {
         console.log('Login Controller Initialized');
 
         if ($window.sessionStorage._auth) $state.go('item');
@@ -31,18 +31,18 @@ app
             }).error(errorCallback);
         };
 
-    $scope.authenticate = function(provider) {
-      $auth.authenticate(provider).then(function(res) {
-        $window.sessionStorage._auth = res.data.token;
-        toaster.pop('success', "Success");
-        $state.go('item');
-      }, handleError);
-    };
+        $scope.authenticate = function(provider) {
+            $auth.authenticate(provider).then(function(res) {
+                $window.sessionStorage._auth = res.data.token;
+                $rootScope.facebookProfile = res.data.profile;
+                toaster.pop('success', "Success");
+                $state.go('item');
+            }, handleError);
+        };
 
-    function handleError(err) {
-      toaster.pop('error', err.message);
-    }
-
+        function handleError(err) {
+            toaster.pop('error', err.data);
+        }
     }])
     .controller('SiteHeader', ['$scope', '$window', '$location', function($scope, $window, $location) {
         $scope.logout = function() {

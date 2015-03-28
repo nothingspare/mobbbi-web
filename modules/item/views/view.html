@@ -1,44 +1,50 @@
-<div class="rowfree">
-    <div class="heartoverimage3 heart-reveal hidden"></div>
-</div>
+<div ng-include src="'modules/site/views/custom-header.html'"></div>
 
-<div class="itemview-stream-item-pic">
-    <div id="item-large-pic">
-        <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-controls rn-carousel-index="carouselIndex" class="my-slider">
-            <li ng-repeat="image in slides">
-                <img ng-src="{{image.image_url}}" />
-            </li>
-        </ul>
-        <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides" rn-carousel-index="carouselIndex" style="margin-top: -25px;"></div>
+<div class="grid-container">
+
+    <div class="itemview-stream-item-pic">
+        <div id="item-large-pic">
+            <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-controls
+                rn-carousel-index="carouselIndex" class="my-slider">
+                <li ng-repeat="image in slides">
+                    <img ng-src="{{image.image_url}}"/>
+                </li>
+            </ul>
+            <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides" rn-carousel-index="carouselIndex"
+                 style="margin-top: -25px;"></div>
+        </div>
+
+        <p id="heart-position"><span class="heart-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b
+                class="price-text">454 </b>
+        </p>
+
+        <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b
+                class="price-text">In-store </b>
+        </p>
+
+        <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b
+                class="price-text">${{item.price}}</b>
+        </p>
     </div>
 
-    <p id="heart-position"><span class="heart-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">454 </b>
-    </p>
-
-    <p id="location-position"><span class="location-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">In-store </b>
-    </p>
-
-    <p id="price-position"><span class="buy-small" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="price-text">${{item.price}}</b>
-    </p>
-</div>
-
-<div ng-controller="ItemViewTabsCtrl">
-    <div class="itemview-icon-cirle-wapper">
-        <div id="message2" ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-comment.html'})">
-            <div class="message-circle"></div>
+    <div ng-controller="ItemViewTabsCtrl">
+        <div class="itemview-icon-cirle-wapper">
+            <div id="message2" ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-comment.html'})">
+                <div class="message-circle"></div>
+            </div>
+            <div id="message2" ng-click="onClickTab({title: 'Two', url: 'modules/item/views/view-tab-log.html'})">
+                <div class="buy-circle"></div>
+            </div>
+            <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
+                <div class="promote-circle"></div>
+            </div>
+            <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
+                <div class="edit-circle"></div>
+            </div>
         </div>
-        <div id="message2" ng-click="onClickTab({title: 'Two', url: 'modules/item/views/view-tab-log.html'})">
-            <div class="buy-circle"></div>
-        </div>
-        <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
-            <div class="promote-circle"></div>
-        </div>
-        <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
-            <div class="edit-circle"></div>
-        </div>
-    </div>
 
-    <div id="mainView" style="clear:both;">
-        <div class="am-fade-and-slide-left" ng-include="currentTab"></div>
+        <div id="mainView" style="clear:both;">
+            <div class="am-fade-and-slide-left" ng-include="currentTab"></div>
+        </div>
     </div>
 </div>

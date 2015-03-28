@@ -35,7 +35,7 @@ app
             $auth.authenticate(provider).then(function(res) {
                 $window.sessionStorage._auth = res.data.token;
                 $rootScope.facebookProfile = res.data.profile;
-                toaster.pop('success', "Success");
+                toaster.pop('success', "Welcome, " + res.data.profile.first_name + "!");
                 $state.go('item');
             }, handleError);
         };

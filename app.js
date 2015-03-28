@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer', 'angularFileUpload']);
 
 app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$authProvider', 'API_URL',
     function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
@@ -44,14 +44,14 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
 
     $authProvider.facebook({
         clientId: '352496064951251',
-        url: API_URL + 'v1/user/auth',
+        url: API_URL + 'v1/user/auth'
     });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
     $httpProvider.interceptors.push('authInterceptor');
 }]);
 
-app.constant('API_URL', 'https://mobbbi-api-tairezzzz-1.c9.io/rest/web/');
+app.constant('API_URL', 'http://api.instastore.us/');
 
 app.factory('authInterceptor', function($q, $window) {
     return {
@@ -75,11 +75,11 @@ app.factory('authInterceptor', function($q, $window) {
 app.value('app-version', '0.2.0');
 
 // Need set url REST Api in controller!
-app.service('rest', function($http, $location, $stateParams) {
+app.service('rest', function($http, $location, $stateParams, API_URL) {
 
     return {
 
-        baseUrl: 'https://mobbbi-api-tairezzzz-1.c9.io/rest/web/',
+        baseUrl: API_URL,
         path: undefined,
 
         models: function() {

@@ -33,37 +33,65 @@ app
 
         }
     }])
-    .controller('ItemView', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', function($scope, rest, toaster, $sce, $filter, $window) {
-        rest.path = 'v1/items';
+    .controller('ItemView', ['$scope', 'rest', 'toaster', '$sce', '$filter', '$window', '$stateParams', '$upload', 'API_URL',
+        function($scope, rest, toaster, $sce, $filter, $window, $stateParams, $upload, API_URL) {
 
-        $scope.item = {};
+            rest.path = 'v1/items';
 
-        var errorCallback = function(data) {
-            toaster.clear();
-            if (data.status == undefined) {
-                angular.forEach(data, function(error) {
-                    toaster.pop('error', "Field: " + error.field, error.message);
-                });
-            }
-            else {
-                toaster.pop('error', "code: " + data.code + " " + data.name, data.message);
-            }
-        };
+            $scope.item = {};
 
-        rest.model().success(function(data) {
-            $scope.item = data;
-            $scope.slides = data.images;
-        }).error(errorCallback);
+            var errorCallback = function(data) {
+                toaster.clear();
+                if (data.status == undefined) {
+                    angular.forEach(data, function(error) {
+                        toaster.pop('error', "Field: " + error.field, error.message);
+                    });
+                }
+                else {
+                    toaster.pop('error', "code: " + data.code + " " + data.name, data.message);
+                }
+            };
 
-        $scope.save = function() {
-            rest.putModel($scope.item).success(function() {
-
-                toaster.pop('success', "Saved");
-
+            rest.model().success(function(data) {
+                $scope.item = data;
+                $scope.slides = data.images;
             }).error(errorCallback);
-        };
 
-    }])
+            $scope.save = function() {
+                rest.putModel($scope.item).success(function() {
+                    toaster.pop('success', "Saved");
+                }).error(errorCallback);
+            };
+
+            $scope.upload = function(files) {
+                if (files && files.length) {
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+                        $upload.upload({
+                            url: API_URL + 'v1/item/upload',
+                            fields: {
+                                'itemId': $stateParams.id,
+                            },
+                            headers: {
+                                'Content-Type': file.type
+                            },
+                            method: 'POST',
+                            data: file,
+                            file: file
+                        }).progress(function(evt) {
+                            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                            console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                        }).success(function(data, status, headers, config) {
+                            toaster.pop('success', 'File ' + config.file.name + ' uploaded!');
+                            $scope.slides.push({'image_url': data});
+                            console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                        });
+                    }
+                }
+            };
+
+        }
+    ])
     .controller('ItemViewTabsCtrl', ['$scope', function($scope) {
 
         $scope.currentTab = 'modules/item/views/view-tab-comment.html';

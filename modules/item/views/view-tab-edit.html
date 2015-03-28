@@ -1,21 +1,19 @@
 <div class="rowfree">
     <div class="reveal6 item-transaction-section">
-        <div id="heart2">
-            <div class="edit-circle">
-            </div>
-        </div>
         <center>
             <form class="form-horizontal" role="form">
                 <div id="content-popup">
-                    <div style="margin: 70px 0px 20px 0px;"><a href="#" class="fast-tap btn sml">&nbsp;Edit item pics&nbsp;</a>
-                    </div>
+                    <!--<div style="margin: 70px 0px 20px 0px;"><a href="#" class="fast-tap btn sml">&nbsp;Edit item pics&nbsp;</a>-->
+                    <!--</div>-->
+                    <!--<div class="btn sml" ng-file-select ng-model="files">&nbsp;Choose item pics&nbsp;</div>-->
+                    <br>
+                    <div class="btn sml" ng-file-select ng-model="files" ng-file-change="upload(files)">&nbsp;Edit Item Pics&nbsp;</div>
+                    <!--Drop File:-->
+                    <!--<div ng-file-drop ng-model="files" class="drop-box" drag-over-class="dragover" ng-multiple="true" allow-dir="true" accept=".jpg,.png,.pdf">Drop Images or PDFs files here</div>-->
+                    <!--<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>-->
 
                     <div class="upload-pic-previews-wrapper">
-                        <div class="upload-pic-previews"></div>
-                        <div class="upload-pic-previews"></div>
-                        <div class="upload-pic-previews"></div>
-                        <div class="upload-pic-previews"></div>
-                        <div class="upload-pic-previews"></div>
+                        <div class="upload-pic-previews" ng-repeat="thumb in slides"><img width="44" height="70" ng-src="{{thumb.image_url}}" /></div>
                     </div>
 
                     <div style="margin: 20px 0px 0px 0px;">
@@ -57,8 +55,6 @@
 
                     <div style="margin: 30px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete item&nbsp;</a>
                     </div>
-
-
         </center>
         </form>
         </div>

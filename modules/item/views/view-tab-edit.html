@@ -7,17 +7,30 @@
                     <!--</div>-->
                     <!--<div class="btn sml" ng-file-select ng-model="files">&nbsp;Choose item pics&nbsp;</div>-->
                     <br>
-                    <div class="btn sml" ng-file-select ng-model="files" ng-file-change="upload(files)">&nbsp;Edit Item Pics&nbsp;</div>
+
+                    <div ng-controller="CropUploadCtrl">
+                        <input type="file" id="fileInput"/>
+                        <div class="cropArea">
+                            <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+                        </div>
+                        <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
+                    </div>
+                    <!--<div class="btn sml" ng-file-select ng-model="files" ng-file-change="upload(files)">&nbsp;Edit Item-->
+                        <!--Pics&nbsp;</div>-->
                     <!--Drop File:-->
                     <!--<div ng-file-drop ng-model="files" class="drop-box" drag-over-class="dragover" ng-multiple="true" allow-dir="true" accept=".jpg,.png,.pdf">Drop Images or PDFs files here</div>-->
                     <!--<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>-->
 
                     <div class="upload-pic-previews-wrapper">
-                        <div class="upload-pic-previews" ng-repeat="thumb in slides"><img width="44" height="70" ng-src="{{thumb.image_url}}" /></div>
+                        <div class="upload-pic-previews" ng-repeat="thumb in slides">
+                            <img width="44" height="70" ng-src="{{thumb.image_url}}"/>
+                            <span class="x-but" ng-click="removeImage(thumb)">X</span>
+                        </div>
                     </div>
 
                     <div style="margin: 20px 0px 0px 0px;">
-                        <textarea ng-model="item.description" class="input item-desicription-input" placeholder="Item description"></textarea>
+                        <textarea ng-model="item.description" class="input item-desicription-input"
+                                  placeholder="Item description"></textarea>
                     </div>
 
                     <div style="margin: 0px 0px 0px 0px;">
@@ -50,12 +63,14 @@
                         </select>
                     </div>
 
-                    <div style="margin: 10px 0px 20px 0px;"><a ng-click="save()" class="fast-tap btn sml">&nbsp;Post changes&nbsp;</a>
+                    <div style="margin: 10px 0px 20px 0px;"><a ng-click="save()" class="fast-tap btn sml">&nbsp;Post
+                        changes&nbsp;</a>
                     </div>
 
-                    <div style="margin: 30px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete item&nbsp;</a>
+                    <div style="margin: 30px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete
+                        item&nbsp;</a>
                     </div>
         </center>
         </form>
-        </div>
     </div>
+</div>

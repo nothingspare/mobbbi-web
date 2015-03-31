@@ -8,13 +8,26 @@
                     <!--<div class="btn sml" ng-file-select ng-model="files">&nbsp;Choose item pics&nbsp;</div>-->
                     <br>
 
-                    <div ng-controller="CropUploadCtrl">
-                        <input type="file" id="fileInput"/>
-                        <div class="cropArea">
-                            <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
-                        </div>
-                        <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
+                    <div ng-controller="ShrinkUploadImageCtrl">
+                        <input id="inputImage2"
+                               type="file"
+                               accept="image/*"
+                               image="image2"
+                               resize-max-height="300"
+                               resize-max-width="300"
+                               resize-quality="0.7" />
+                        <img ng-show="image2" ng-src="{{image2.resized.dataURL}}"/>
+                        <div class = "btn sml" type="submit" ng-click="single(image2.resized)">&nbsp;Upload File&nbsp;</div>
                     </div>
+
+
+                    <!--<div ng-controller="CropUploadCtrl">-->
+                        <!--<input type="file" id="fileInput"/>-->
+                        <!--<div class="cropArea">-->
+                            <!--<img-crop image="myImage" result-image="myCroppedImage"></img-crop>-->
+                        <!--</div>-->
+                        <!--<div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>-->
+                    <!--</div>-->
                     <!--<div class="btn sml" ng-file-select ng-model="files" ng-file-change="upload(files)">&nbsp;Edit Item-->
                         <!--Pics&nbsp;</div>-->
                     <!--Drop File:-->

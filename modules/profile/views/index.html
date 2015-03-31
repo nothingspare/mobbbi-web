@@ -168,16 +168,14 @@
                             <f3>Store image compiler</f3>
                         </div>
                         <h6 style="margin: 20px 10px 0px 10px;">Upload a full-length background picture of yourself in your store. Then <strong>zoom</strong> and <strong>move</strong> it over your face, then crop.</h6>
-                        <div class="container">
-                            <input type="file" class="uploadfile" id="uploadfile">
-                            <div class="example">
-                                <div class="default">
-                                    <div class="cropMain"></div>
-                                    <div class="cropSlider"></div>
-                                </div>
+                        <div ng-controller="CropUploadCtrl">
+                            <input type="file" id="fileInput"/>
+
+                            <div class="cropArea">
+                                <div><img-crop image="myImage" result-image="myCroppedImage"></img-crop></div>
                             </div>
+                            <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
                         </div>
-                    </center>
                     <div class="compiler-btn-group">
                         <div class="newupload">Upload background</div>
                         <button class="btn crop-btn">Crop</button>

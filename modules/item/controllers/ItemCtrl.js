@@ -89,17 +89,8 @@ app
             return tabUrl == $scope.currentTab;
         }
     }])
-    .controller('CropUploadCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', function ($scope, $stateParams, $upload, API_URL, toaster) {
-        $scope.myImage = '';
-        $scope.myCroppedImage = '';
+    .controller('ShrinkUploadImageCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', function ($scope, $stateParams, $upload, API_URL, toaster) {
 
-        /**
-         * Converts data uri to Blob. Necessary for uploading.
-         * @see
-         *   http://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
-         * @param  {String} dataURI
-         * @return {Blob}
-         */
         var dataURItoBlob = function (dataURI) {
             var binary = atob(dataURI.split(',')[1]);
             var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
@@ -110,17 +101,9 @@ app
             return new Blob([new Uint8Array(array)], {type: mimeString});
         };
 
-        var handleFileSelect = function (evt) {
-            var file = evt.currentTarget.files[0];
-            var reader = new FileReader();
-            reader.onload = function (evt) {
-                $scope.$apply(function ($scope) {
-                    $scope.myImage = evt.target.result;
-                });
-            };
-            reader.readAsDataURL(file);
+        $scope.single = function(image){
+            $scope.upload([dataURItoBlob(image.dataURL)]);
         };
-        angular.element(document.querySelector('#fileInput')).on('change', handleFileSelect);
 
         $scope.upload = function (files) {
             if (files && files.length) {
@@ -148,9 +131,4 @@ app
                 }
             }
         };
-
-        $scope.uploadCrop = function () {
-            $scope.upload([dataURItoBlob($scope.myCroppedImage)]);
-        };
-
     }]);

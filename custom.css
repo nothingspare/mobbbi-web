@@ -3038,3 +3038,38 @@ ul.safearea a {
     margin-right: 13px;
     margin-top: -17px;
 }
+
+/*background image*/
+
+.contrast {
+    -webkit-filter:contrast(1.8);
+    filter:contrast(1.8);
+}
+
+.brightness {
+    -webkit-filter:brightness(.9);
+    filter:brightness(.9);
+}
+
+.blur {
+    -webkit-filter:blur(6px);
+    filter:blur(6px);
+}
+
+.opacity {
+    -webkit-filter:opacity(.6);
+    filter:opacity(.6);
+}
+
+.image-filters2 {
+    -webkit-filter:opacity(.2);
+    filter:opacity(.2);
+
+    -webkit-filter:blur(6px);
+    filter:blur(6px);
+}
+
+.image-filters {
+    opacity: .6;
+    -webkit-filter:blur(6px);
+}

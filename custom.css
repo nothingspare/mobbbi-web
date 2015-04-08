@@ -1507,168 +1507,59 @@ h3 {
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 10px;
 }
+/*/ - - - - - - - app icons - - - - - - - - - - /*/
 
-/** - - - - - - - app icons - - - - - - - - - - **/
+.heart-small,.message-small,.buy-small,.location-small,.green-tick,.buyer-message-small,.box-small { width:18px; height:18px; background-color: #111;}
+.heart-small { background:url(../img/icons.svg); background-position: -30px -10px; background-size: 900px 35px; }
+.message-small { background:url(../img/icons.svg); background-position: -72px -9px; background-size: 900px 35px; }
+.buy-small { background:url(../img/icons.svg); background-position: -110px -10px; background-size: 900px 35px; }
+.location-small { background:url(../img/icons.svg); background-position: -140px -9px; background-size: 900px 35px; }
+.box-small { background:url(../img/icons.svg); background-position: -170px -10px; background-size: 900px 35px; }
+.buyer-message-small { background:url(../img/icons.svg); background-position: -207px -9px; background-size: 900px 35px; }
+.green-tick-small { background:url(../img/icons.svg); background-position: -242px -8px; background-size: 900px 35px; }
 
-.heart-small,
-.message-small,
-.buy-small,
-.location-small,
-.green-tick,
-.buyer-message-small,
-.box-small {
-    width: 18px;
-    height: 18px;
-    background-color: #111;
-}
+.message-circle,.heart-circle,.location-circle,.buy-circle,.photo-circle,.key-circle,.edit-circle,.delete-circle,.promote-circle,.box-circle,.transaction-circle,.store-circle,.buyer-message-circle,.message-circle-hover,.heart-circle-over,.location-circle-over,.buy-circle-over,.edit-circle-over,.promote-circle-over,.buyer-message-circle-over { width:50px; height:50px; }
 
-.heart-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -5px -10px;
-    background-size: 900px 35px;
-}
+.message-circle { background:url(../img/icons.svg); background-position: -350px -0px; background-size: 1200px 50px; }
+.message-circle:hover { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
+.message-circle.active { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
 
-.message-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -49px -9px;
-    background-size: 900px 35px;
-}
+.heart-circle { background:url(../img/icons.svg); background-position: -400px -0px; background-size: 1200px 50px; }
+.heart-circle:hover { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
+.heart-circle.active { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
 
-.buy-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -79px -8px;
-    background-size: 900px 35px;
-}
+.location-circle { background:url(../img/icons.svg); background-position: -450px -0px; background-size: 1200px 50px; }
+.location-circle:hover { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
+.location-circle.active { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
 
-.location-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -117px -9px;
-    background-size: 900px 35px;
-}
+.buy-circle { background:url(../img/icons.svg); background-position: -500px -0px; background-size: 1200px 50px; }
+.buy-circle:hover { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
+.buy-circle.active { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
 
-.box-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -127px -8px;
-    background-size: 900px 35px;
-}
+.photo-circle { background:url(../img/icons.svg); background-position: -550px -0px; background-size: 1200px 50px; }
+.key-circle { background:url(../img/icons.svg); background-position: -600px -0px; background-size: 1200px 50px; }
 
-.buyer-message-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -196px -9px;
-    background-size: 900px 35px;
-}
+.edit-circle { background:url(../img/icons.svg); background-position: -650px -0px; background-size: 1200px 50px; }
+.edit-circle:hover { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
+.edit-circle.active { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
 
-.green-tick-small {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -340px -8px;
-    background-size: 900px 35px;
-}
+.delete-circle { background:url(../img/icons.svg); background-position: -700px -0px; background-size: 1200px 50px; }
 
-.account-circle,
-.message-circle,
-.heart-circle,
-.location-circle,
-.buy-circle,
-.photo-circle,
-.key-circle,
-.edit-circle,
-.delete-circle,
-.promote-circle,
-.box-circle,
-.transaction-circle,
-.store-circle,
-.buyer-message-circle {
-    width: 48px;
-    height: 48px;
-}
+.promote-circle { background:url(../img/icons.svg); background-position: -750px -0px; background-size: 1200px 50px; }
+.promote-circle:hover { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
+.promote-circle.active { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
 
-.account-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -350px -0px;
-    background-size: 1200px 50px;
-}
+.buyer-message-circle { background:url(../img/icons.svg); background-position: -800px -0px; background-size: 1200px 50px; }
+.buyer-message-circle:hover { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
+.buyer-message-circle.active { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
 
-.message-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -400px -0px;
-    background-size: 1200px 50px;
-}
-
-.heart-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -450px -0px;
-    background-size: 1200px 50px;
-}
-
-.location-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -500px -0px;
-    background-size: 1200px 50px;
-}
-
-.buy-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -550px -0px;
-    background-size: 1200px 50px;
-}
-
-.photo-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -600px -0px;
-    background-size: 1200px 50px;
-}
-
-.key-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -650px -0px;
-    background-size: 1200px 50px;
-}
-
-.edit-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -700px -0px;
-    background-size: 1200px 50px;
-}
-
-.delete-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -750px -0px;
-    background-size: 1200px 50px;
-}
-
-.promote-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -800px -0px;
-    background-size: 1200px 50px;
-}
-
-.box-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -850px -0px;
-    background-size: 1200px 50px;
-}
-
-.transaction-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -900px -0px;
-    background-size: 1200px 50px;
-}
-
-.store-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -950px -0px;
-    background-size: 1200px 50px;
-}
-
-.buyer-message-circle {
-    background: url(img/icons-sprite2.0.1.png);
-    background-position: -1000px -0px;
-    background-size: 1200px 50px;
-}
-
-#icon-text {
-    font-size: 70%;
-}
+.message-circle-over { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
+.heart-circle-over { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
+.location-circle-over { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
+.buy-circle-over { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
+.edit-circle-over { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
+.promote-circle-over { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
+.buyer-message-circle-over { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
 
 /** - - - - - GRID ITEM icon & text positioning - - - - - - - **/
 /** - - big pic - - **/
@@ -3111,7 +3002,7 @@ ul.safearea a {
     background: #E4E4E4;
     overflow: hidden;
     width: 245px;
-    height: 250px;
+    height: 230px;
 }
 
 #container1-itemview {
@@ -3135,4 +3026,15 @@ ul.safearea a {
     right: -31%;
     color: gainsboro;
     font-size: 22px;
+}
+
+#fileInput{
+    width: 114px;
+}
+
+.x-profile{
+    cursor:pointer;
+    float: right;
+    margin-right: 13px;
+    margin-top: -17px;
 }

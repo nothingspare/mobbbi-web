@@ -123,7 +123,7 @@ app
             template: '<a href="login" ng-if="isGuest">Login</a>'
         }
     }])
-    .directive('image', function ($q) {
+    .directive('imagesh', function ($q) {
         'use strict'
 
         var URL = window.URL || window.webkitURL;
@@ -199,7 +199,7 @@ app
         return {
             restrict: 'A',
             scope: {
-                image: '=',
+                image: '=imagesh',
                 resizeMaxHeight: '@?',
                 resizeMaxWidth: '@?',
                 resizeQuality: '@?',

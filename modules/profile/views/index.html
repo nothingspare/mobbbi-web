@@ -1,266 +1,289 @@
-<div class="outer">
-    <div class="middle">
-        <div class="inner" id="account-popup">
-            <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-index="carouselIndex" class="safearea ng-cloak">
-                <li>
-                    <! - - - - - - - - - - - - - page one - - - - - - - - - - - - - >
-                    <center>
-                        <div class="setting-titles" style="margin: 20px 0 0 0;">
-                            <f3>User details</f3>
-                        </div>
+<div ng-include src="'modules/site/views/custom-header.html'"></div>
 
-                        <div style="inline: block; width: 220px; margin: 20px 0 0 0;">
-                            <div style=" margin: 8px 0 0 0; float: left;">
-                                <p>Facebook autofill</p>
+<div class="grid-container">
+    <div class="outer">
+        <div class="middle">
+            <div class="inner" id="account-popup">
+                <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-index="carouselIndex"
+                    class="safearea ng-cloak">
+                    <li>
+                        <! - - - - - - - - - - - - - page one - - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
+                            <div class="setting-titles" style="margin: 20px 0 0 0;">
+                                <f3>User details</f3>
                             </div>
-                            <div style="float: right; margin: 0px 0 0px 0px;">
-                                <label class="switch-light switch" onclick="">
-                                    <input type="checkbox">
+
+                            <div style="inline: block; width: 220px; margin: 20px 0 0 0;">
+                                <div style=" margin: 8px 0 0 0; float: left;">
+                                    <p>Facebook autofill</p>
+                                </div>
+                                <div style="float: right; margin: 0px 0 0px 0px;">
+                                    <label class="switch-light switch" onclick="">
+                                        <input type="checkbox">
                                     <span>
 									<span>On</span>
                                     <span>Off</span>
                                     </span>
-                                    <a></a>
-                                </label>
+                                        <a></a>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <input class="regular-feild margin-top" ng-model="facebookProfile.first_name" type="text" placeholder="First name" />
-                        <input class="regular-feild" type="text" ng-model="facebookProfile.last_name"placeholder="Last name" />
-                        <input class="regular-feild" type="email" ng-model="facebookProfile.email" placeholder="Email" />
-                        <input class="regular-feild" type="number" placeholder="Phone number" />
-                        <input class="regular-feild margin-top" type="password" placeholder="Password" />
-                        <br/>
-                    </center>
-                    <! - - - - - - - - - - - - page one end - - - - - - - - - - - - >
-                </li>
-                <li>
-                    <! - - - - - - - - - - - - - page two - - - - - - - - - - - - - >
-                    <center>
-                        <div id="content">
+                            <input class="regular-feild margin-top" ng-model="facebookProfile.first_name" type="text"
+                                   placeholder="First name"/>
+                            <input class="regular-feild" type="text" ng-model="facebookProfile.last_name"
+                                   placeholder="Last name"/>
+                            <input class="regular-feild" type="email" ng-model="facebookProfile.email"
+                                   placeholder="Email"/>
+                            <input class="regular-feild" type="number" placeholder="Phone number"/>
+                            <input class="regular-feild margin-top" type="password" placeholder="Password"/>
+                            <br/>
+                        </center>
+                        <! - - - - - - - - - - - - page one end - - - - - - - - - - - - >
+                    </li>
+                    <li>
+                        <! - - - - - - - - - - - - - page two - - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
+                            <div id="content">
+                                <div class="setting-titles" style=" margin: 20px 0 0 0;">
+                                    <f3>Enable item purchasing</f3>
+                                </div>
+                                <input class="regular-feild margin-top" type="number" placeholder="Credit card number"/>
+
+                                <div style="inline: block;width: 240px;margin: 0px 0 0 0;">
+                                    <div style="float: left;margin: 0px 0px 0px 0px;">
+                                        <input id="textfield1" type="date" placeholder="00/00">
+                                    </div>
+                                    <div style="float: left;margin: 0px 0px 0px 10px;">
+                                        <input id="textfield3" type="text" placeholder="CVV">
+                                    </div>
+                                    <div style=" margin: 8px 0 30px 0;float: right;"><a href="#"
+                                                                                        class="fast-tap btn sml">&nbsp;&nbsp;&nbsp;Link&nbsp;&nbsp;&nbsp;</a>
+                                    </div>
+                                </div>
+
+                                <input class="regular-feild" type="text" placeholder="Ship to address"/>
+
+                                <div style="inline: block; width: 240px; margin 0 0 0 0;">
+                                    <div style="float: left; margin: 0px 0px 0px 0px;">
+                                        <input id="textfield4" type="text" placeholder="City"/>
+                                    </div>
+
+                                    <div style="float: right; margin: 0px 0px 0px 10px;">
+                                        <input id="textfield5" type="text" placeholder="State"/>
+                                    </div>
+
+                                    <div style="float: left; margin: -4px 0px 0px 0;">
+                                        <input id="textfield7" type="text" placeholder="Zipcode"/>
+                                    </div>
+
+                                    <div style=" margin: 4px 0 30px 0; float: right;"><a href="#" class="btn sml">&nbsp;Verify&nbsp;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                        <! - - - - - - - - - - - - page two end - - - - - - - - - - - - >
+                    </li>
+                    <li>
+                        <! - - - - - - - - - - - - - page three - - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
+                            <div class="setting-titles" style=" margin: 20px 0 -10px 0;">
+                                <f3>Open a Mobbbi store while they're still FREE</f3>
+                            </div>
+                            <h6 style="margin: 20px;">Add your stores Facebook detials if your are registered as a page
+                                Admin.</h6>
+
+                            <select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">
+                                <option value="">Stores Facebook page</option>
+                                <option value="extralarge">Brand Hatchers</option>
+                                <option value="large">Couturia</option>
+                                <option value="medium">Mobbbi</option>
+                            </select>
+
+                            <div style="margin: 0px 0px 0px 0px;">
+                                <input class="regular-feild" type="text" placeholder="Store name"/>
+                            </div>
+                            <div style="margin: 0px 0px 0px 0px;">
+                                <textarea class="input store-desicription"
+                                          placeholder="Store description (two lines)"></textarea>
+                            </div>
+                            <div style="margin: -5px 0px 0px 0px;">
+                                <textarea class="input store-special-qualities"
+                                          placeholder="Store special qualities (Three smaller lines)"></textarea>
+                            </div>
+                            <select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">
+                                <option value="">Store catagory</option>
+                                <option value="extralarge">Fashion</option>
+                                <option value="large">Electronics</option>
+                                <option value="medium">Furniture</option>
+                                <option value="medium">Toys</option>
+                                <option value="medium">Records</option>
+                            </select>
+                        </center>
+                        <! - - - - - - - - - - - page three end - - - - - - - - - - - >
+                    </li>
+                    <li>
+                        <! - - - - - - - - - - - - page four - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
                             <div class="setting-titles" style=" margin: 20px 0 0 0;">
-                                <f3>Enable item purchasing</f3>
+                                <f3>Store detials</f3>
                             </div>
-                            <input class="regular-feild margin-top" type="number" placeholder="Credit card number" />
-                            <div style="inline: block;width: 240px;margin: 0px 0 0 0;">
-                                <div style="float: left;margin: 0px 0px 0px 0px;">
-                                    <input id="textfield1" type="date" placeholder="00/00">
-                                </div>
-                                <div style="float: left;margin: 0px 0px 0px 10px;">
-                                    <input id="textfield3" type="text" placeholder="CVV">
-                                </div>
-                                <div style=" margin: 8px 0 30px 0;float: right;"><a href="#" class="fast-tap btn sml">&nbsp;&nbsp;&nbsp;Link&nbsp;&nbsp;&nbsp;</a>
-                                </div>
-                            </div>
+                            <input class="regular-feild margin-top" type="text" placeholder="Store location"/>
 
-                            <input class="regular-feild" type="text" placeholder="Ship to address" />
-
-                            <div style="inline: block; width: 240px; margin 0 0 0 0;">
+                            <div style="inline: block; width: 240px; margin: 0 0 0 0;">
                                 <div style="float: left; margin: 0px 0px 0px 0px;">
-                                    <input id="textfield4" type="text" placeholder="City" />
+                                    <input id="textfield4" type="text" placeholder="City"/>
                                 </div>
 
                                 <div style="float: right; margin: 0px 0px 0px 10px;">
-                                    <input id="textfield5" type="text" placeholder="State" />
+                                    <input id="textfield5" type="text" placeholder="State"/>
                                 </div>
 
-                                <div style="float: left; margin: -4px 0px 0px 0;">
-                                    <input id="textfield7" type="text" placeholder="Zipcode" />
+                                <div style="float: left; margin: -4px 0 0 0;">
+                                    <input id="textfield7" type="text" placeholder="Zipcode"/>
                                 </div>
 
-                                <div style=" margin: 4px 0 30px 0; float: right;"><a href="#" class="btn sml">&nbsp;Verify&nbsp;</a>
+                                <div style=" margin: 4px 0 16px 0; float: right;"><a href="#" class="btn sml">&nbsp;Verify&nbsp;</a>
                                 </div>
                             </div>
-                        </div>
-                    </center>
-                    <! - - - - - - - - - - - - page two end - - - - - - - - - - - - >
-                </li>
-                <li>
-                    <! - - - - - - - - - - - - - page three - - - - - - - - - - - - - >
-                    <center>
-                        <div class="setting-titles" style=" margin: 20px 0 -10px 0;">
-                            <f3>Open a Mobbbi store while they're still FREE</f3>
-                        </div>
-                        <h6 style="margin: 20px;">Add your stores Facebook detials if your are registered as a page Admin.</h6>
 
-                        <select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">
-                            <option value="">Stores Facebook page</option>
-                            <option value="extralarge">Brand Hatchers</option>
-                            <option value="large">Couturia</option>
-                            <option value="medium">Mobbbi</option>
-                        </select>
-                        <div style="margin: 0px 0px 0px 0px;">
-                            <input class="regular-feild" type="text" placeholder="Store name" />
-                        </div>
-                        <div style="margin: 0px 0px 0px 0px;">
-                            <textarea class="input store-desicription" placeholder="Store description (two lines)"></textarea>
-                        </div>
-                        <div style="margin: -5px 0px 0px 0px;">
-                            <textarea class="input store-special-qualities" placeholder="Store special qualities (Three smaller lines)"></textarea>
-                        </div>
-                        <select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">
-                            <option value="">Store catagory</option>
-                            <option value="extralarge">Fashion</option>
-                            <option value="large">Electronics</option>
-                            <option value="medium">Furniture</option>
-                            <option value="medium">Toys</option>
-                            <option value="medium">Records</option>
-                        </select>
-                    </center>
-                    <! - - - - - - - - - - - page three end - - - - - - - - - - - >
-                </li>
-                <li>
-                    <! - - - - - - - - - - - - page four - - - - - - - - - - - - >
-                    <center>
-                        <div class="setting-titles" style=" margin: 20px 0 0 0;">
-                            <f3>Store detials</f3>
-                        </div>
-                        <input class="regular-feild margin-top" type="text" placeholder="Store location" />
+                            <h6 style="margin: 110px 20px 0px 20px;">Start trading now. Mobbbi holds your balance until
+                                your ready to cash out with PayPal. </h6>
 
-                        <div style="inline: block; width: 240px; margin: 0 0 0 0;">
-                            <div style="float: left; margin: 0px 0px 0px 0px;">
-                                <input id="textfield4" type="text" placeholder="City" />
+                            <div style="inline: block; width: 240px; margin: 10px 0 0 0;">
+                                <div style="float: left; margin: 0px 0px 0px 0px;">
+                                    <input id="textfield6" type="text" placeholder="PayPal email"/>
+                                </div>
+
+                                <div style=" margin: 8px 0 10px 0; float: right;"><a href="#" class="btn sml">Cash out&nbsp;</a>
+                                </div>
                             </div>
-
-                            <div style="float: right; margin: 0px 0px 0px 10px;">
-                                <input id="textfield5" type="text" placeholder="State" />
-                            </div>
-
-                            <div style="float: left; margin: -4px 0 0 0;">
-                                <input id="textfield7" type="text" placeholder="Zipcode" />
-                            </div>
-
-                            <div style=" margin: 4px 0 16px 0; float: right;"><a href="#" class="btn sml">&nbsp;Verify&nbsp;</a>
-                            </div>
-                        </div>
-
-                        <h6 style="margin: 110px 20px 0px 20px;">Start trading now. Mobbbi holds your balance until your ready to cash out with PayPal. </h6>
-
-                        <div style="inline: block; width: 240px; margin: 10px 0 0 0;">
-                            <div style="float: left; margin: 0px 0px 0px 0px;">
-                                <input id="textfield6" type="text" placeholder="PayPal email" />
-                            </div>
-
-                            <div style=" margin: 8px 0 10px 0; float: right;"><a href="#" class="btn sml">Cash out&nbsp;</a>
-                            </div>
-                        </div>
-                        <div style="inline: block; width: 220px; margin: 75px 0 0 0;">
-                            <div style=" margin: 8px 20px 0 0; float: left;">
-                                <p>Store visability</p>
-                            </div>
-                            <div style="float: right; margin: 0px 0 0px 0px;">
-                                <label class="switch-light switch" onclick="">
-                                    <input type="checkbox">
+                            <div style="inline: block; width: 220px; margin: 75px 0 0 0;">
+                                <div style=" margin: 8px 20px 0 0; float: left;">
+                                    <p>Store visability</p>
+                                </div>
+                                <div style="float: right; margin: 0px 0 0px 0px;">
+                                    <label class="switch-light switch" onclick="">
+                                        <input type="checkbox">
                                     <span>
 									<span>On</span>
                                     <span>Off</span>
                                     </span>
-                                    <a></a>
-                                </label>
+                                        <a></a>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                    </center>
-                    <! - - - - - - - - - - - - page four end - - - - - - - - - - - - >
-                </li>
-                <li>
-                    <! - - - - - - - - - - - - page five - - - - - - - - - - - - >
-                    <center>
-                        <div class="setting-titles" style=" margin: 20px 0 0 0;">
-                            <f3>Store image compiler</f3>
-                        </div>
-                        <h6 style="margin: 20px 10px 0px 10px;">Upload a full-length background picture of yourself in your store. Then <strong>zoom</strong> and <strong>move</strong> it over your face, then crop.</h6>
-                        <div ng-controller="CropUploadCtrl">
-                            <input type="file" id="fileInput"/>
-
-                            <div class="cropArea">
-                                <div><img-crop image="myImage" result-image="myCroppedImage"></img-crop></div>
+                        </center>
+                        <! - - - - - - - - - - - - page four end - - - - - - - - - - - - >
+                    </li>
+                    <li>
+                        <! - - - - - - - - - - - - page five - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
+                            <div class="setting-titles" style=" margin: 15px 0 0 0;">
+                                <f3>Image Store</f3>
                             </div>
-                            <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
-                        </div>
-                    <div class="compiler-btn-group">
-                        <div class="newupload">Upload background</div>
-                        <button class="btn crop-btn">Crop</button>
-                    </div>
-                    </center>
-                    <! - - - - - - - - - - - - page five end - - - - - - - - - - - - >
-                </li>
-                <li>
-                    <! - - - - - - - - - - - - page six - - - - - - - - - - - - >
-                    <center>
-                        <div class="setting-titles" style=" margin: 20px 0 20px; 0">
-                            <f3>Promote your store</f3>
-                        </div>
+                            <h6 style="margin: 0px 10px 0px 10px;">Upload a full-length background picture of yourself
+                                in your store. Then <strong>zoom</strong> and <strong>move</strong> it over your face,
+                                then crop.</h6>
 
-                        <div style="inline: block; width: 240px; margin: 0 0 0px 0;">
+                            <div ng-controller="CropUploadCtrl">
+                                <input type="file" id="fileInput"/>
 
-                            <div style=" margin: 8px 0 38px 0; float: left;">
-                                <p>Facebook posting</p>
+                                <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
+
+                                <div class="cropArea">
+                                    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+                                </div>
+
                             </div>
-                            <div style="margin: 0px 0 0px 0px; float: right;">
-                                <label class="switch-light switch" onclick="">
-                                    <input type="checkbox">
+                        </center>
+                        <! - - - - - - - - - - - - page five end - - - - - - - - - - - - >
+                    </li>
+                    <li>
+                        <! - - - - - - - - - - - - page six - - - - - - - - - - - - >
+                        <center>
+                            <div ui-sref = "item" class = "x-profile">X</div>
+                            <div class="setting-titles" style=" margin: 20px 0 20px; 0">
+                                <f3>Promote your store</f3>
+                            </div>
+
+                            <div style="inline: block; width: 240px; margin: 0 0 0px 0;">
+
+                                <div style=" margin: 8px 0 38px 0; float: left;">
+                                    <p>Facebook posting</p>
+                                </div>
+                                <div style="margin: 0px 0 0px 0px; float: right;">
+                                    <label class="switch-light switch" onclick="">
+                                        <input type="checkbox">
                                     <span>
 					                <span>On</span>
                                     <span>Off</span>
                                     </span>
-                                    <a></a>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div style="inline: block; width: 240px; margin: 0 0 0 0;">
-
-                            <div style=" float: left; margin: 0 0 32px 0; width:131px;">
-                                <p>Email Gmail contacts</p>
+                                        <a></a>
+                                    </label>
+                                </div>
                             </div>
 
-                            <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
-                            </div>
-                        </div>
+                            <div style="inline: block; width: 240px; margin: 0 0 0 0;">
 
-                        <div style="inline: block; width: 240px; margin: -20px 0 0 0;">
+                                <div style=" float: left; margin: 0 0 32px 0; width:131px;">
+                                    <p>Email Gmail contacts</p>
+                                </div>
 
-                            <div style=" float: left; margin: 0px 0 0 0px;">
-                                <p>SMS phone contacts</p>
-                            </div>
-
-                            <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
-                            </div>
-                        </div>
-
-                        <div style="inline: block; width: 240px; margin: 220px 0 0px 0;">
-
-                            <div style=" margin: 8px 0 0 0px; float: left;">
-                                <p>eBay item posting</p>
+                                <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
+                                </div>
                             </div>
 
-                            <div style="margin: 0px 0 16px 0px; float: right;">
-                                <label class="switch-light switch" onclick="">
-                                    <input type="checkbox">
+                            <div style="inline: block; width: 240px; margin: -20px 0 0 0;">
+
+                                <div style=" float: left; margin: 0px 0 0 0px;">
+                                    <p>SMS phone contacts</p>
+                                </div>
+
+                                <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
+                                </div>
+                            </div>
+
+                            <div style="inline: block; width: 240px; margin: 220px 0 0px 0;">
+
+                                <div style=" margin: 8px 0 0 0px; float: left;">
+                                    <p>eBay item posting</p>
+                                </div>
+
+                                <div style="margin: 0px 0 16px 0px; float: right;">
+                                    <label class="switch-light switch" onclick="">
+                                        <input type="checkbox">
                                     <span>
 					                <span>On</span>
                                     <span>Off</span>
                                     </span>
-                                    <a></a>
-                                </label>
+                                        <a></a>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div style=" width: 240px; margin: 0px 0 20px 0;">
-                            <h6 style="margin: 270px 0px 0px 0px;">Share, post and promote you store url.</h6>
+                            <div style=" width: 240px; margin: 0px 0 20px 0;">
+                                <h6 style="margin: 270px 0px 0px 0px;">Share, post and promote you store url.</h6>
 
-                            <div class="url-text" style=" margin: 10px 0 0 0;">
-                                <h4>mobbbi.com/mystorename</h4>
+                                <div class="url-text" style=" margin: 10px 0 0 0;">
+                                    <h4>mobbbi.com/mystorename</h4>
+                                </div>
                             </div>
-                        </div>
-                    </center>
-                    <! - - - - - - - - - - - - page six end - - - - - - - - - - - - >
-                </li>
-            </ul>
+                        </center>
+                        <! - - - - - - - - - - - - page six end - - - - - - - - - - - - >
+                    </li>
+                </ul>
 
-            <div style=" margin: 4px 0 30px 0; float: center;">
-                <div class="btn sml">&nbsp;Done&nbsp;</div>
+                <div style=" margin: 4px 0 30px 0; float: center;">
+                    <div class="btn sml">&nbsp;Done&nbsp;</div>
+                </div>
+                <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides"
+                     rn-carousel-index="carouselIndex"></div>
             </div>
-            <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides" rn-carousel-index="carouselIndex"></div>
         </div>
     </div>
 </div>

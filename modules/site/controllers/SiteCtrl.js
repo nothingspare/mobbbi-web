@@ -2,6 +2,10 @@ app
     .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function($scope, $rootScope, rest, toaster, $window, $state, $auth) {
         console.log('Login Controller Initialized');
 
+        if($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
+        if($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
+        else $rootScope.bgUrl = "img/background1-blur.jpg";
+
         if ($window.sessionStorage._auth) $state.go('item');
 
         $scope.pageClass = 'page-enter1';
@@ -35,6 +39,8 @@ app
             $auth.authenticate(provider).then(function(res) {
                 $window.sessionStorage._auth = res.data.token;
                 $rootScope.facebookProfile = res.data.profile;
+                $rootScope.avatarUrl = res.data.store.avatar_url;
+                $rootScope.bgUrl = res.data.store.bg_url;
                 toaster.pop('success', "Welcome, " + res.data.profile.first_name + "!");
                 $state.go('item');
             }, handleError);

@@ -12,6 +12,19 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
             controller: 'SiteLogin',
             templateUrl: modulesPath + '/site/views/main.html'
         });
+
+        $stateProvider.state('sellorbuy', {
+            url: '/sellorbuy',
+            controller: 'SellOrBuy',
+            templateUrl: modulesPath + '/site/views/sellorbuy.html'
+        });
+
+        $stateProvider.state('storeselect', {
+            url: '/storeselect',
+            controller: 'SiteStoreSelect',
+            templateUrl: modulesPath + '/site/views/storeselect.html'
+        });
+
         $stateProvider.state('item', {
             url: '/item',
             controller: 'ItemIndex',
@@ -257,6 +270,26 @@ app
                     }
                 });
             }
+        };
+    })
+    .directive('backgroundImage', function () {
+        return function (scope, element, attrs) {
+            restrict: 'A',
+                attrs.$observe('backgroundImage', function (value) {
+                    if (!value) value = 'img/background1-blur.jpg';
+                    var style = "<style> html:before{background-image:url('" + value + "');}</style>";
+                    element.append(style);
+                });
+        };
+    })
+    .directive('backgroundFilter', function () {
+        return function (scope, element, attrs) {
+            restrict: 'A',
+                attrs.$observe('backgroundFilter', function (value) {
+                    var style = "<style>" +
+                        "html:before{" + value + ")}</style>"
+                    element.append(style);
+                });
         };
     })
     .filter('checkmark', function () {

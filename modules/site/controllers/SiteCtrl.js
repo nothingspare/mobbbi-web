@@ -1,9 +1,9 @@
 app
-    .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function($scope, $rootScope, rest, toaster, $window, $state, $auth) {
+    .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function ($scope, $rootScope, rest, toaster, $window, $state, $auth) {
         console.log('Login Controller Initialized');
 
-        if($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
-        if($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
+        if ($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
+        if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
         else $rootScope.bgUrl = "img/background1-blur.jpg";
 
         if ($window.sessionStorage._auth) $state.go('item');
@@ -12,15 +12,15 @@ app
 
         rest.path = 'v1/user/login';
 
-        var errorCallback = function(data) {
+        var errorCallback = function (data) {
             toaster.clear();
             delete $window.sessionStorage._auth;
-            angular.forEach(data, function(error) {
+            angular.forEach(data, function (error) {
                 toaster.pop('error', "Field: " + error.field, error.message);
             });
         };
 
-        $scope.login = function() {
+        $scope.login = function () {
 
             rest.path = 'v1/user/login';
 
@@ -28,21 +28,21 @@ app
                 toaster.pop('error', "Wrong login or password");
                 return;
             }
-            rest.postModel($scope.model).success(function(data) {
+            rest.postModel($scope.model).success(function (data) {
                 $window.sessionStorage._auth = data;
                 toaster.pop('success', "Success");
                 $state.go('item');
             }).error(errorCallback);
         };
 
-        $scope.authenticate = function(provider) {
-            $auth.authenticate(provider).then(function(res) {
+        $scope.authenticate = function (provider) {
+            $auth.authenticate(provider).then(function (res) {
                 $window.sessionStorage._auth = res.data.token;
                 $rootScope.facebookProfile = res.data.profile;
                 $rootScope.avatarUrl = res.data.store.avatar_url;
                 $rootScope.bgUrl = res.data.store.bg_url;
                 toaster.pop('success', "Welcome, " + res.data.profile.first_name + "!");
-                $state.go('item');
+                $state.go('sellorbuy');
             }, handleError);
         };
 
@@ -50,13 +50,32 @@ app
             toaster.pop('error', err.data);
         }
     }])
-    .controller('SiteHeader', ['$scope', '$window', '$location', function($scope, $window, $location) {
-        $scope.logout = function() {
+    .controller('SiteHeader', ['$scope', '$window', '$location', function ($scope, $window, $location) {
+        $scope.logout = function () {
             $window.sessionStorage.removeItem('_auth');
             $location.path("/");
         };
 
-        $scope.profile = function() {
+        $scope.profile = function () {
             $location.path("/profile");
+        };
+    }])
+    .controller('SellOrBuy', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
+
+        $scope.goAsBuyer = function () {
+            $rootScope.isSeller = false;
+            $state.go('storeselect');
+        };
+
+        $scope.goAsSeller = function () {
+            $rootScope.isSeller = true;
+            $state.go('storeselect');
+        };
+
+    }])
+    .controller('SiteStoreSelect', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
+        if ($rootScope.isSeller==false) $state.go('item');
+        $scope.selectStore = function(){
+            $state.go('item');
         };
     }]);

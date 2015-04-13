@@ -627,7 +627,7 @@ body {
 }
 
 html {
-    background: url(img/background1-blur.jpg) no-repeat center center fixed;
+    /*background: url(img/background1-blur.jpg) no-repeat center center fixed;*/
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -2505,7 +2505,7 @@ input,
 }
 
 #textfield7 {
-    width: 135px;
+    width: 117px;
 }
 
 #textfield8 {
@@ -2538,6 +2538,13 @@ input,
     width: 101%;
     height: 36px;
     background-color: #f37878;
+}
+
+.selector2 {
+    width: 101%;
+    height: 36px;
+    background-color: #4f74d5;
+    border: 1px solid #4f74d5;
 }
 
 .store-desicription {
@@ -2674,7 +2681,7 @@ input:-moz-placeholder {
     text-decoration: none;
 }
 
-.newupload: active {
+.newupload:active {
     background-color: #f37878;
     color: #fff;
     border: 1px solid #f37878;
@@ -3072,4 +3079,16 @@ ul.safearea a {
 .image-filters {
     opacity: .6;
     -webkit-filter:blur(6px);
+}
+html:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }

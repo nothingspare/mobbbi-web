@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" lang="en" style="background:url({{bgUrl}}) no-repeat center center fixed; background-size: cover;">
+<html ng-app="myApp" lang="en" background-image="{{bgUrl}}" background-filter="-webkit-filter:blur(6px);filter:blur(6px);">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,16 +45,10 @@
     <link rel="stylesheet" href="vendor/angular-carousel/dist/angular-carousel.min.css">
     <link rel="stylesheet" href="vendor/ngImgCrop/compile/minified/ng-img-crop.css">
     <link rel="stylesheet" href="vendor/angular-loading-bar/build/loading-bar.min.css">
-    
-    <style>
-        .view-animate-container {
-            position: relative;
-        }
-    </style>
+
 </head>
 
 <body class="ng-cloak" style="overflow-y: scroll">
-
     <!--[if lte IE 9]>
 <p class="browsehappy">
     Похоже, вы используете <strong>устаревшую версию</strong> Internet Explorer. <a href="http://browsehappy.com/">Обновите

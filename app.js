@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer', 'angularFileUpload', 'ngImgCrop', 'angular-loading-bar']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer', 'angularFileUpload', 'ngImgCrop', 'angular-loading-bar', 'ngDialog']);
 
 app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$authProvider', 'API_URL',
     function ($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
@@ -53,6 +53,12 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
             url: '/location',
             controller: 'LocationIndex',
             templateUrl: modulesPath + '/location/views/index.html'
+        });
+
+        $stateProvider.state('store', {
+            url: '/store',
+            controller: 'StoreIndex',
+            templateUrl: modulesPath + '/store/views/index.html'
         });
 
         $authProvider.facebook({

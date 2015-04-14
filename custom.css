@@ -1507,59 +1507,247 @@ h3 {
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 10px;
 }
+
 /*/ - - - - - - - app icons - - - - - - - - - - /*/
 
-.heart-small,.message-small,.buy-small,.location-small,.green-tick,.buyer-message-small,.box-small { width:18px; height:18px; background-color: #111;}
-.heart-small { background:url(../img/icons.svg); background-position: -30px -10px; background-size: 900px 35px; }
-.message-small { background:url(../img/icons.svg); background-position: -72px -9px; background-size: 900px 35px; }
-.buy-small { background:url(../img/icons.svg); background-position: -110px -10px; background-size: 900px 35px; }
-.location-small { background:url(../img/icons.svg); background-position: -140px -9px; background-size: 900px 35px; }
-.box-small { background:url(../img/icons.svg); background-position: -170px -10px; background-size: 900px 35px; }
-.buyer-message-small { background:url(../img/icons.svg); background-position: -207px -9px; background-size: 900px 35px; }
-.green-tick-small { background:url(../img/icons.svg); background-position: -242px -8px; background-size: 900px 35px; }
+.heart-small, .message-small, .buy-small, .location-small, .green-tick, .buyer-message-small, .box-small {
+    width: 18px;
+    height: 18px;
+    background-color: #111;
+}
 
-.message-circle,.heart-circle,.location-circle,.buy-circle,.photo-circle,.key-circle,.edit-circle,.delete-circle,.promote-circle,.box-circle,.transaction-circle,.store-circle,.buyer-message-circle,.message-circle-hover,.heart-circle-over,.location-circle-over,.buy-circle-over,.edit-circle-over,.promote-circle-over,.buyer-message-circle-over { width:50px; height:50px; }
+.heart-small {
+    background: url(../img/icons.svg);
+    background-position: -30px -10px;
+    background-size: 900px 35px;
+}
 
-.message-circle { background:url(../img/icons.svg); background-position: -350px -0px; background-size: 1200px 50px; }
-.message-circle:hover { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
-.message-circle.active { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
+.message-small {
+    background: url(../img/icons.svg);
+    background-position: -72px -9px;
+    background-size: 900px 35px;
+}
 
-.heart-circle { background:url(../img/icons.svg); background-position: -400px -0px; background-size: 1200px 50px; }
-.heart-circle:hover { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
-.heart-circle.active { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
+.buy-small {
+    background: url(../img/icons.svg);
+    background-position: -110px -10px;
+    background-size: 900px 35px;
+}
 
-.location-circle { background:url(../img/icons.svg); background-position: -450px -0px; background-size: 1200px 50px; }
-.location-circle:hover { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
-.location-circle.active { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
+.location-small {
+    background: url(../img/icons.svg);
+    background-position: -140px -9px;
+    background-size: 900px 35px;
+}
 
-.buy-circle { background:url(../img/icons.svg); background-position: -500px -0px; background-size: 1200px 50px; }
-.buy-circle:hover { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
-.buy-circle.active { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
+.box-small {
+    background: url(../img/icons.svg);
+    background-position: -170px -10px;
+    background-size: 900px 35px;
+}
 
-.photo-circle { background:url(../img/icons.svg); background-position: -550px -0px; background-size: 1200px 50px; }
-.key-circle { background:url(../img/icons.svg); background-position: -600px -0px; background-size: 1200px 50px; }
+.buyer-message-small {
+    background: url(../img/icons.svg);
+    background-position: -207px -9px;
+    background-size: 900px 35px;
+}
 
-.edit-circle { background:url(../img/icons.svg); background-position: -650px -0px; background-size: 1200px 50px; }
-.edit-circle:hover { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
-.edit-circle.active { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
+.green-tick-small {
+    background: url(../img/icons.svg);
+    background-position: -242px -8px;
+    background-size: 900px 35px;
+}
 
-.delete-circle { background:url(../img/icons.svg); background-position: -700px -0px; background-size: 1200px 50px; }
+.message-circle, .heart-circle, .location-circle, .buy-circle, .photo-circle, .key-circle, .edit-circle, .delete-circle, .promote-circle, .box-circle, .transaction-circle, .store-circle, .buyer-message-circle, .message-circle-hover, .heart-circle-over, .location-circle-over, .buy-circle-over, .edit-circle-over, .promote-circle-over, .buyer-message-circle-over {
+    width: 50px;
+    height: 50px;
+}
 
-.promote-circle { background:url(../img/icons.svg); background-position: -750px -0px; background-size: 1200px 50px; }
-.promote-circle:hover { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
-.promote-circle.active { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
+.message-circle {
+    background: url(../img/icons.svg);
+    background-position: -350px -0px;
+    background-size: 1200px 50px;
+}
 
-.buyer-message-circle { background:url(../img/icons.svg); background-position: -800px -0px; background-size: 1200px 50px; }
-.buyer-message-circle:hover { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
-.buyer-message-circle.active { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
+.message-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -850px -0px;
+    background-size: 1200px 50px;
+}
 
-.message-circle-over { background:url(../img/icons.svg); background-position: -850px -0px; background-size: 1200px 50px; }
-.heart-circle-over { background:url(../img/icons.svg); background-position: -900px -0px; background-size: 1200px 50px; }
-.location-circle-over { background:url(../img/icons.svg); background-position: -950px -0px; background-size: 1200px 50px; }
-.buy-circle-over { background:url(../img/icons.svg); background-position: -1000px -0px; background-size: 1200px 50px; }
-.edit-circle-over { background:url(../img/icons.svg); background-position: -1050px -0px; background-size: 1200px 50px; }
-.promote-circle-over { background:url(../img/icons.svg); background-position: -1100px -0px; background-size: 1200px 50px; }
-.buyer-message-circle-over { background:url(../img/icons.svg); background-position: -1150px -0px; background-size: 1200px 50px; }
+.message-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -850px -0px;
+    background-size: 1200px 50px;
+}
+
+.heart-circle {
+    background: url(../img/icons.svg);
+    background-position: -400px -0px;
+    background-size: 1200px 50px;
+}
+
+.heart-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -900px -0px;
+    background-size: 1200px 50px;
+}
+
+.heart-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -900px -0px;
+    background-size: 1200px 50px;
+}
+
+.location-circle {
+    background: url(../img/icons.svg);
+    background-position: -450px -0px;
+    background-size: 1200px 50px;
+}
+
+.location-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -950px -0px;
+    background-size: 1200px 50px;
+}
+
+.location-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -950px -0px;
+    background-size: 1200px 50px;
+}
+
+.buy-circle {
+    background: url(../img/icons.svg);
+    background-position: -500px -0px;
+    background-size: 1200px 50px;
+}
+
+.buy-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -1000px -0px;
+    background-size: 1200px 50px;
+}
+
+.buy-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -1000px -0px;
+    background-size: 1200px 50px;
+}
+
+.photo-circle {
+    background: url(../img/icons.svg);
+    background-position: -550px -0px;
+    background-size: 1200px 50px;
+}
+
+.key-circle {
+    background: url(../img/icons.svg);
+    background-position: -600px -0px;
+    background-size: 1200px 50px;
+}
+
+.edit-circle {
+    background: url(../img/icons.svg);
+    background-position: -650px -0px;
+    background-size: 1200px 50px;
+}
+
+.edit-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -1050px -0px;
+    background-size: 1200px 50px;
+}
+
+.edit-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -1050px -0px;
+    background-size: 1200px 50px;
+}
+
+.delete-circle {
+    background: url(../img/icons.svg);
+    background-position: -700px -0px;
+    background-size: 1200px 50px;
+}
+
+.promote-circle {
+    background: url(../img/icons.svg);
+    background-position: -750px -0px;
+    background-size: 1200px 50px;
+}
+
+.promote-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -1100px -0px;
+    background-size: 1200px 50px;
+}
+
+.promote-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -1100px -0px;
+    background-size: 1200px 50px;
+}
+
+.buyer-message-circle {
+    background: url(../img/icons.svg);
+    background-position: -800px -0px;
+    background-size: 1200px 50px;
+}
+
+.buyer-message-circle:hover {
+    background: url(../img/icons.svg);
+    background-position: -1150px -0px;
+    background-size: 1200px 50px;
+}
+
+.buyer-message-circle.active {
+    background: url(../img/icons.svg);
+    background-position: -1150px -0px;
+    background-size: 1200px 50px;
+}
+
+.message-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -850px -0px;
+    background-size: 1200px 50px;
+}
+
+.heart-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -900px -0px;
+    background-size: 1200px 50px;
+}
+
+.location-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -950px -0px;
+    background-size: 1200px 50px;
+}
+
+.buy-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -1000px -0px;
+    background-size: 1200px 50px;
+}
+
+.edit-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -1050px -0px;
+    background-size: 1200px 50px;
+}
+
+.promote-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -1100px -0px;
+    background-size: 1200px 50px;
+}
+
+.buyer-message-circle-over {
+    background: url(../img/icons.svg);
+    background-position: -1150px -0px;
+    background-size: 1200px 50px;
+}
 
 /** - - - - - GRID ITEM icon & text positioning - - - - - - - **/
 /** - - big pic - - **/
@@ -3026,8 +3214,8 @@ ul.safearea a {
     width: 223px;
 }
 
-.x-but{
-    cursor:pointer;
+.x-but {
+    cursor: pointer;
     position: relative;
     top: -110%;
     right: -31%;
@@ -3035,12 +3223,12 @@ ul.safearea a {
     font-size: 22px;
 }
 
-#fileInput{
+#fileInput {
     width: 114px;
 }
 
-.x-profile{
-    cursor:pointer;
+.x-profile {
+    cursor: pointer;
     float: right;
     margin-right: 13px;
     margin-top: -17px;
@@ -3049,37 +3237,38 @@ ul.safearea a {
 /*background image*/
 
 .contrast {
-    -webkit-filter:contrast(1.8);
-    filter:contrast(1.8);
+    -webkit-filter: contrast(1.8);
+    filter: contrast(1.8);
 }
 
 .brightness {
-    -webkit-filter:brightness(.9);
-    filter:brightness(.9);
+    -webkit-filter: brightness(.9);
+    filter: brightness(.9);
 }
 
 .blur {
-    -webkit-filter:blur(6px);
-    filter:blur(6px);
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
 }
 
 .opacity {
-    -webkit-filter:opacity(.6);
-    filter:opacity(.6);
+    -webkit-filter: opacity(.6);
+    filter: opacity(.6);
 }
 
 .image-filters2 {
-    -webkit-filter:opacity(.2);
-    filter:opacity(.2);
+    -webkit-filter: opacity(.2);
+    filter: opacity(.2);
 
-    -webkit-filter:blur(6px);
-    filter:blur(6px);
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
 }
 
 .image-filters {
     opacity: .6;
-    -webkit-filter:blur(6px);
+    -webkit-filter: blur(6px);
 }
+
 html:before {
     content: "";
     position: fixed;
@@ -3091,4 +3280,42 @@ html:before {
     width: 100%;
     height: 100%;
     background-size: cover;
+}
+
+.ngdialog {
+    position: fixed;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 85px !important;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 300px !important;
+    border-radius: 0px !important;
+    border-color: #d0d0d0 #bbbbbb #a7a7a7 #bbbbbb;
+    -webkit-border-radius: 0.0em;
+    -moz-border-radius: 0.0em;
+    border-radius: 0.0em;
+    -webkit-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.6), 0 3px 6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.6), 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.6), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container1 {
+    margin: 20px 0 0 0;
+    margin-left: 0px;
+}
+
+.store-footer {
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    margin: 0 auto;
+    width: 100%;
+    background: rgba(225, 225, 225, 0.3);
 }

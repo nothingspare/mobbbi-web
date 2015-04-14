@@ -1,7 +1,5 @@
 app
     .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function ($scope, $rootScope, rest, toaster, $window, $state, $auth) {
-        console.log('Login Controller Initialized');
-
         if ($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
         if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
         else $rootScope.bgUrl = "img/background1-blur.jpg";
@@ -50,31 +48,38 @@ app
             toaster.pop('error', err.data);
         }
     }])
-    .controller('SiteHeader', ['$scope', '$window', '$location', function ($scope, $window, $location) {
+    .controller('SiteHeader', ['$scope', '$window', '$state', 'ngDialog', function ($scope, $window, $state, ngDialog) {
         $scope.logout = function () {
             $window.sessionStorage.removeItem('_auth');
-            $location.path("/");
+            $state.go("main");
         };
 
         $scope.profile = function () {
-            $location.path("/profile");
+            $state.go("profile");
         };
+
+        $scope.clickToOpen = function () {
+            ngDialog.open({ template: 'modules/site/views/additem.html' });
+        };
+
     }])
     .controller('SellOrBuy', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
 
         $scope.goAsBuyer = function () {
+            console.log('go as buyer');
             $rootScope.isSeller = false;
             $state.go('storeselect');
         };
 
         $scope.goAsSeller = function () {
+            console.log('go as seller');
             $rootScope.isSeller = true;
             $state.go('storeselect');
         };
 
     }])
     .controller('SiteStoreSelect', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
-        if ($rootScope.isSeller==false) $state.go('item');
+        if ($rootScope.isSeller) $state.go('item');
         $scope.selectStore = function(){
             $state.go('item');
         };

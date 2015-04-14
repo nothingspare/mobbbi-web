@@ -28,21 +28,44 @@
     </div>
 
     <div ng-controller="ItemViewTabsCtrl">
-        <div class="itemview-icon-cirle-wapper">
-            <div id="message2" ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-comment.html'})">
-                <div class="message-circle" ng-class="isActiveTab('modules/item/views/view-tab-comment.html') ? 'active' : ''"></div>
+        <div ng-if="!isSeller" class="itemview-icon-cirle-wapper">
+            <div id="message2"
+                 ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-buyer-comment.html'})">
+                <div class="buyer-message-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-buyer-comment.html') ? 'active' : ''"></div>
             </div>
             <div id="message2" ng-click="onClickTab({title: 'Two', url: 'modules/item/views/view-tab-log.html'})">
-                <div class="buy-circle" ng-class="isActiveTab('modules/item/views/view-tab-log.html') ? 'active' : ''"></div>
+                <div class="buy-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-log.html') ? 'active' : ''"></div>
             </div>
             <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
-                <div class="promote-circle" ng-class="isActiveTab('modules/item/views/view-tab-social.html') ? 'active' : ''"></div>
+                <div class="heart-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-social.html') ? 'active' : ''"></div>
             </div>
             <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
-                <div class="edit-circle" ng-class="isActiveTab('modules/item/views/view-tab-edit.html') ? 'active' : ''"></div>
+                <div class="location-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-edit.html') ? 'active' : ''"></div>
             </div>
         </div>
-
+        <div ng-if="isSeller" class="itemview-icon-cirle-wapper">
+            <div id="message2"
+                 ng-click="onClickTab({title: 'One', url: 'modules/item/views/view-tab-comment.html'})">
+                <div class="message-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-comment.html') ? 'active' : ''"></div>
+            </div>
+            <div id="message2" ng-click="onClickTab({title: 'Two', url: 'modules/item/views/view-tab-log.html'})">
+                <div class="buy-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-log.html') ? 'active' : ''"></div>
+            </div>
+            <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
+                <div class="promote-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-social.html') ? 'active' : ''"></div>
+            </div>
+            <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
+                <div class="edit-circle"
+                     ng-class="isActiveTab('modules/item/views/view-tab-edit.html') ? 'active' : ''"></div>
+            </div>
+        </div>
         <div id="mainView" style="clear:both;">
             <div class="am-fade-and-slide-left" ng-include="currentTab"></div>
         </div>

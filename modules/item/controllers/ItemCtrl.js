@@ -77,9 +77,10 @@ app
             };
         }
     ])
-    .controller('ItemViewTabsCtrl', ['$scope', function ($scope) {
+    .controller('ItemViewTabsCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
-        $scope.currentTab = 'modules/item/views/view-tab-comment.html';
+        if(!$rootScope.isSeller) $scope.currentTab = 'modules/item/views/view-tab-buyer-comment.html';
+        else $scope.currentTab = 'modules/item/views/view-tab-comment.html';
 
         $scope.onClickTab = function (tab) {
             $scope.currentTab = tab.url;

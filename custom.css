@@ -2644,6 +2644,10 @@ input,
     width: 45px;
 }
 
+#textfield11, #textfield12 {
+    width: 75px;
+}
+
 .regular-feild {
     width: 220px;
     margin: 0 0 10px 0;

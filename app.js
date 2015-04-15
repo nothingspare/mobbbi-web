@@ -37,6 +37,12 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
             templateUrl: modulesPath + '/item/views/view.html'
         });
 
+        $stateProvider.state('accounts', {
+            url: '/accounts',
+            controller: 'StoreAccounts',
+            templateUrl: modulesPath + '/store/views/accounts.html'
+        });
+
         $stateProvider.state('profile', {
             url: '/profile',
             controller: 'ProfileIndex',
@@ -71,6 +77,11 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
     }]);
 
 app.constant('API_URL', 'http://api.instastore.us/');
+
+app.run(function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+});
 
 app.factory('authInterceptor', function ($q, $window) {
     return {

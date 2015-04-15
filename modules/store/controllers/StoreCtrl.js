@@ -1,4 +1,7 @@
 app
-    .controller('StoreIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', function ($scope, rest, toaster, $sce, $filter) {
+    .controller('StoreIndex', ['$scope', function ($scope) {
+
+    }])
+    .controller('StoreAccounts', ['$scope', function ($scope) {
 
     }]);

@@ -89,6 +89,11 @@ app
         $scope.isActiveTab = function (tabUrl) {
             return tabUrl == $scope.currentTab;
         }
+
+        $scope.likeItem = function(){
+            console.log('show');
+            $rootScope.showHearts = !$rootScope.showHearts;
+        };
     }])
     .controller('ShrinkUploadImageCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', function ($scope, $stateParams, $upload, API_URL, toaster) {
 

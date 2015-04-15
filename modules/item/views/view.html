@@ -1,8 +1,10 @@
 <div ng-include src="'modules/site/views/custom-header.html'"></div>
 
 <div class="grid-container">
-
     <div class="itemview-stream-item-pic">
+        <div class="rowfree">
+            <div ng-if="showHearts" class="heartoverimage2 heart-reveal-large"></div>
+        </div>
         <div id="item-large-pic">
             <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-controls
                 rn-carousel-index="carouselIndex" class="my-slider">
@@ -38,13 +40,12 @@
                 <div class="buy-circle"
                      ng-class="isActiveTab('modules/item/views/view-tab-log.html') ? 'active' : ''"></div>
             </div>
-            <div id="buy2" ng-click="onClickTab({title: 'Three', url: 'modules/item/views/view-tab-social.html'})">
-                <div class="heart-circle"
-                     ng-class="isActiveTab('modules/item/views/view-tab-social.html') ? 'active' : ''"></div>
+            <div ng-click="likeItem()" id="buy2">
+                <div class="heart-circle"></div>
             </div>
-            <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-edit.html'})">
+            <div id="heart2" ng-click="onClickTab({title: 'Four', url: 'modules/item/views/view-tab-location.html'})">
                 <div class="location-circle"
-                     ng-class="isActiveTab('modules/item/views/view-tab-edit.html') ? 'active' : ''"></div>
+                     ng-class="isActiveTab('modules/item/views/view-tab-location.html') ? 'active' : ''"></div>
             </div>
         </div>
         <div ng-if="isSeller" class="itemview-icon-cirle-wapper">
@@ -67,7 +68,7 @@
             </div>
         </div>
         <div id="mainView" style="clear:both;">
-            <div class="am-fade-and-slide-left" ng-include="currentTab"></div>
+            <div class="am-fade-and-slide-bottom" ng-include="currentTab"></div>
         </div>
     </div>
 </div>

@@ -70,6 +70,9 @@ app
             setBg: function (bgUrl) {
                 $rootScope.bgUrl = $window.sessionStorage.bgUrl = bgUrl;
             },
+            setAvatar: function (avatarUrl) {
+                $rootScope.avatarUrl = $window.sessionStorage.avatarUrl = avatarUrl;
+            },
             initBgAndAvatar: function(){
                 if ($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
                 if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
@@ -77,8 +80,11 @@ app
             setIsSeller: function(value){
                 $rootScope.isSeller = value;
             },
-            setAvatar: function (avatarUrl) {
-                $rootScope.avatarUrl = $window.sessionStorage.avatarUrl = avatarUrl;
+            setProfile: function(profile){
+                $window.sessionStorage.facebookProfile = JSON.stringify(profile);
+            },
+            getProfile: function(){
+                return JSON.parse($window.sessionStorage.facebookProfile);
             },
             currentUser: function () {
                 return currentUser;

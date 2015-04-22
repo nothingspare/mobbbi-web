@@ -1,6 +1,5 @@
 app
-    .controller('ProfileIndex', ['$scope', 'rest', 'toaster', '$sce', '$filter', function ($scope, rest, toaster, $sce, $filter) {
-
+    .controller('ProfileIndex', ['$scope', 'UserService', function ($scope, UserService) {
         $scope.slides = [
             {title: 'first'},
             {title: 'second'},
@@ -9,30 +8,10 @@ app
             {title: 'fifth'},
             {title: 'sixth'}
         ];
-
-        //rest.path = 'v1/stores';
-        //
-        //$scope.store = {};
-        //
-        //var errorCallback = function (data) {
-        //    toaster.clear();
-        //    if (data.status == undefined) {
-        //        angular.forEach(data, function (error) {
-        //            toaster.pop('error', "Field: " + error.field, error.message);
-        //        });
-        //    }
-        //    else {
-        //        toaster.pop('error', "code: " + data.code + " " + data.name, data.message);
-        //    }
-        //};
-        //
-        //rest.model().success(function (data) {
-        //    $scope.store = data;
-        //}).error(errorCallback);
-
+        $scope.facebookProfile = UserService.getProfile();
     }])
-    .controller('CropUploadCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', '$rootScope', '$window', 'UserService',
-        function ($scope, $stateParams, $upload, API_URL, toaster, $rootScope, $window, UserService) {
+    .controller('CropUploadCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', '$window', 'UserService',
+        function ($scope, $stateParams, $upload, API_URL, toaster, $window, UserService) {
             $scope.myImage = '';
             $scope.myCroppedImage = '';
 

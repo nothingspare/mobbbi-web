@@ -35,9 +35,7 @@ app
             $auth.authenticate(provider).then(function (res) {
 
                 UserService.login(res.data.token);
-
-                $rootScope.facebookProfile = res.data.profile;
-
+                UserService.setProfile(res.data.profile);
                 UserService.setBg(res.data.store.bg_url);
                 UserService.setAvatar(res.data.store.avatar_url);
 

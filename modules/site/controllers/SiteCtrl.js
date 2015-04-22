@@ -1,10 +1,8 @@
 app
-    .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', function ($scope, $rootScope, rest, toaster, $window, $state, $auth) {
-        if ($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
-        if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
-        else $rootScope.bgUrl = "img/background1-blur.jpg";
+    .controller('SiteLogin', ['$scope', '$rootScope', 'rest', 'toaster', '$window', '$state', '$auth', 'UserService',
+        function ($scope, $rootScope, rest, toaster, $window, $state, $auth, UserService) {
 
-        if ($window.sessionStorage._auth) $state.go('item');
+        if (!UserService.isGuest()) $state.go('item');
 
         $scope.pageClass = 'page-enter1';
 
@@ -12,7 +10,7 @@ app
 
         var errorCallback = function (data) {
             toaster.clear();
-            delete $window.sessionStorage._auth;
+            UserService.logout();
             angular.forEach(data, function (error) {
                 toaster.pop('error', "Field: " + error.field, error.message);
             });
@@ -27,7 +25,7 @@ app
                 return;
             }
             rest.postModel($scope.model).success(function (data) {
-                $window.sessionStorage._auth = data;
+                UserService.login(data);
                 toaster.pop('success', "Success");
                 $state.go('item');
             }).error(errorCallback);
@@ -35,10 +33,14 @@ app
 
         $scope.authenticate = function (provider) {
             $auth.authenticate(provider).then(function (res) {
-                $window.sessionStorage._auth = res.data.token;
+
+                UserService.login(res.data.token);
+
                 $rootScope.facebookProfile = res.data.profile;
-                $rootScope.avatarUrl = res.data.store.avatar_url;
-                $rootScope.bgUrl = res.data.store.bg_url;
+
+                UserService.setBg(res.data.store.bg_url);
+                UserService.setAvatar(res.data.store.avatar_url);
+
                 toaster.pop('success', "Welcome, " + res.data.profile.first_name + "!");
                 $state.go('sellorbuy');
             }, handleError);
@@ -48,11 +50,12 @@ app
             toaster.pop('error', err.data);
         }
     }])
-    .controller('SiteHeader', ['$scope', '$window', '$state', 'ngDialog', function ($scope, $window, $state, ngDialog) {
-        $scope.logout = function () {
-            $window.sessionStorage.removeItem('_auth');
+    .controller('SiteHeader', ['$scope', '$window', '$state', 'ngDialog', 'UserService', function ($scope, $window, $state, ngDialog, UserService) {
+
+        $scope.logout = function(){
+            UserService.logout();
             $state.go("main");
-        };
+        }
 
         $scope.profile = function () {
             $state.go("profile");
@@ -63,23 +66,21 @@ app
         };
 
     }])
-    .controller('SellOrBuy', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
+    .controller('SellOrBuy', ['$scope', 'UserService', '$state', function ($scope, UserService, $state) {
 
         $scope.goAsBuyer = function () {
-            console.log('go as buyer');
-            $rootScope.isSeller = false;
+            UserService.setIsSeller(false);
             $state.go('storeselect');
         };
 
         $scope.goAsSeller = function () {
-            console.log('go as seller');
-            $rootScope.isSeller = true;
+            UserService.setIsSeller(true);
             $state.go('storeselect');
         };
 
     }])
     .controller('SiteStoreSelect', ['$scope', '$rootScope', '$state', function ($scope, $rootScope, $state) {
-        if ($rootScope.isSeller) $state.go('item');
+        if ($rootScope.isSeller) $state.go('grid');
         $scope.selectStore = function(){
             $state.go('item');
         };

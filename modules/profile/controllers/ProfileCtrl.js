@@ -31,8 +31,8 @@ app
         //}).error(errorCallback);
 
     }])
-    .controller('CropUploadCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', '$rootScope', '$window',
-        function ($scope, $stateParams, $upload, API_URL, toaster, $rootScope, $window) {
+    .controller('CropUploadCtrl', ['$scope', '$stateParams', '$upload', 'API_URL', 'toaster', '$rootScope', '$window', 'UserService',
+        function ($scope, $stateParams, $upload, API_URL, toaster, $rootScope, $window, UserService) {
             $scope.myImage = '';
             $scope.myCroppedImage = '';
 
@@ -85,12 +85,10 @@ app
                             console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                         }).success(function (data, status, headers, config) {
                             if (isAvatar > 0) {
-                                $rootScope.avatarUrl = data;
-                                $window.sessionStorage.avatarUrl = data;
+                                UserService.setAvatar(data);
                             }
                             else {
-                                $rootScope.bgUrl = data;
-                                $window.sessionStorage.bgUrl = data;
+                                UserService.setBg(data);
                             }
                             toaster.pop('success', 'File uploaded!');
                             console.log('file uploaded. Response: ' + data);

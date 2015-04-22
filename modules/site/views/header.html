@@ -58,16 +58,16 @@
     <div id="container2">
         <div id="navigation2">
             <ul>
-                <li><a ng-if="!isSeller" ui-sref-active="menu-item-active" ui-sref="grid">
-                    <div class="gridstream"></div>
-                </a></li>
-                <li><a ng-if="isSeller" ng-click="clickToOpen()">
+                <li ng-if="isSeller"><a ng-click="clickToOpen()">
                     <div class="additem"></div>
+                </a></li>
+                <li><a ui-sref-active="menu-item-active" ui-sref="grid">
+                    <div class="gridstream"></div>
                 </a></li>
                 <li><a ui-sref-active="menu-item-active" ui-sref="item">
                     <div class="stream"></div>
                 </a></li>
-                <li><a ui-sref-active="menu-item-active" ui-sref="location">
+                <li ng-if="!isSeller"><a ui-sref-active="menu-item-active" ui-sref="location">
                     <div class="location"></div>
                 </a></li>
             </ul>

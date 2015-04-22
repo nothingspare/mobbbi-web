@@ -3264,7 +3264,7 @@ html:before {
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-    width: 300px !important;
+    width: 250px !important;
     border-radius: 0px !important;
     border-color: #d0d0d0 #bbbbbb #a7a7a7 #bbbbbb;
     -webkit-border-radius: 0.0em;
@@ -3287,4 +3287,15 @@ html:before {
     margin: 0 auto;
     width: 100%;
     background: rgba(225, 225, 225, 0.3);
+}
+
+.profile-img {
+    float: left;
+    background-image: url('img/avatar4.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 30px;
 }

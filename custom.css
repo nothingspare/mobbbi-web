@@ -1876,7 +1876,7 @@ h3 {
 
 /** message paragraph inset ajustment applied **/
 
-#message-position-item-slider{
+#message-position-item-slider {
     margin: 0 auto;
     position: relative;
     margin: -70px 0 0 0px;
@@ -2460,8 +2460,8 @@ input,
     background-color: rgba(225, 225, 225, 0.5);
     padding: 5px 10px 5px;
     text-align: left;
-    border: 1px solid #acacac;
-    border-color: #acacac #acacac #acacac #acacac;
+    border: 1px solid #f37878;
+    border-color: #f37878 #f37878 #f37878 #f37878;
     -webkit-border-radius: 0.2em;
     -moz-border-radius: 0.2em;
     border-radius: 0.2em;
@@ -2606,6 +2606,7 @@ input,
 
 #textfield1 {
     width: 57px;
+    height: 22px;
 }
 
 #textfield2 {
@@ -2629,7 +2630,7 @@ input,
 }
 
 #textfield7 {
-    width: 117px;
+    width: 137px;
 }
 
 #textfield8 {
@@ -3097,10 +3098,26 @@ input:-moz-placeholder {
 
 /** - - - - - heart reveal animation/position - - - - - - - **/
 @-webkit-keyframes myfirst {
-    0%   { background-size: 0px 0px;  opacity: .4; display: block;}
-    80%  { background-size: 200px 180px; opacity: 100; display: block;}
-    99% { background-size: 40px 35px;   opacity: 0; display: block;}
-    100% { background-size: 40px 35px;   opacity: 0; display: none;}
+    0% {
+        background-size: 0px 0px;
+        opacity: .4;
+        display: block;
+    }
+    80% {
+        background-size: 200px 180px;
+        opacity: 100;
+        display: block;
+    }
+    99% {
+        background-size: 40px 35px;
+        opacity: 0;
+        display: block;
+    }
+    100% {
+        background-size: 40px 35px;
+        opacity: 0;
+        display: none;
+    }
 }
 
 .heart-reveal-large {
@@ -3162,13 +3179,6 @@ ul.safearea a {
     box-shadow: inset rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.3) 0 -1px 0;
 }
 
-.cropArea {
-    background: #E4E4E4;
-    overflow: hidden;
-    width: 245px;
-    height: 230px;
-}
-
 #container1-itemview {
     position: fixed;
     top: 0px;
@@ -3192,50 +3202,33 @@ ul.safearea a {
     font-size: 22px;
 }
 
-#fileInput {
-    width: 114px;
-}
-
 .x-profile {
+    border-radius: 5px;
     cursor: pointer;
-    float: right;
-    margin-right: 13px;
-    margin-top: -17px;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 9999;
 }
 
-/*background image*/
-
-.contrast {
-    -webkit-filter: contrast(1.8);
-    filter: contrast(1.8);
+.x-profile:before {
+    background: 0 0;
+    border-radius: 3px;
+    color: #f37878;
+    content: '\00D7';
+    font-size: 26px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 26px;
+    position: absolute;
+    right: 3px;
+    text-align: center;
+    top: 3px;
+    width: 30px;
 }
 
-.brightness {
-    -webkit-filter: brightness(.9);
-    filter: brightness(.9);
-}
-
-.blur {
-    -webkit-filter: blur(6px);
-    filter: blur(6px);
-}
-
-.opacity {
-    -webkit-filter: opacity(.6);
-    filter: opacity(.6);
-}
-
-.image-filters2 {
-    -webkit-filter: opacity(.2);
-    filter: opacity(.2);
-
-    -webkit-filter: blur(6px);
-    filter: blur(6px);
-}
-
-.image-filters {
-    opacity: .6;
-    -webkit-filter: blur(6px);
+.x-profile:hover:before {
+    color: #444;
 }
 
 html:before {
@@ -3299,3 +3292,63 @@ html:before {
     margin-top: 20px;
     margin-left: 30px;
 }
+
+/*Profile store section begin*/
+.profile-store .page1 .regular-feild {
+    margin: 0 0 20px 0;
+}
+
+.profile-store .page3 .custom-file-input {
+    outline: none;
+    width: 180px;
+    height: 34px;
+    padding: 0 0 0 0;
+    overflow: hidden;
+}
+
+.profile-store .page3 .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.profile-store .page3 .custom-file-input::before {
+    content: 'Upload background';
+    display: inline-block;
+    width: 180px;
+    height: 36px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 18px;
+    color: #fff;
+    background-color: #f37878;
+    padding: 6px 10px 6px 12px;
+}
+
+.profile-store .page3 .custom-file-input:hover::before {
+    color: #f37878;
+    background-color: #eee;
+}
+
+.profile-store .page3 .btn.sml {
+    margin: -16px 0px 0 5px;
+}
+
+.profile-store .page3 .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.profile-store .page3 .cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width: 240px;
+    height: 200px;
+}
+
+.profile-store .page4 h4 {
+    margin-top:25px;
+    color: #555;
+}
+
+/*Profile store section end*/

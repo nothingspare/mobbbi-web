@@ -8,6 +8,7 @@ app
                     };
                 }
                 UserService.initBgAndAvatar();
+                UserService.initIsSeller();
                 return config;
             },
             responseError: function (rejection) {
@@ -77,8 +78,11 @@ app
                 if ($window.sessionStorage.avatarUrl) $rootScope.avatarUrl = $window.sessionStorage.avatarUrl;
                 if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
             },
+            initIsSeller: function(){
+                if($window.sessionStorage.isSeller) $rootScope.isSeller = $window.sessionStorage.isSeller;
+            },
             setIsSeller: function(value){
-                $rootScope.isSeller = value;
+                $window.sessionStorage.isSeller = $rootScope.isSeller = value;
             },
             setProfile: function(profile){
                 $window.sessionStorage.facebookProfile = JSON.stringify(profile);

@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer', 'angularFileUpload', 'ngImgCrop', 'angular-loading-bar', 'ngDialog']);
+var app = angular.module('myApp', ['ui.router', 'ngAnimate', 'toaster', 'ngSanitize', 'angular-carousel', 'satellizer', 'angularFileUpload', 'ngImgCrop', 'angular-loading-bar', 'ngDialog', 'ngTouch']);
 
 app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', '$authProvider', 'API_URL',
     function ($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
@@ -47,6 +47,12 @@ app.config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpP
             url: '/profile',
             controller: 'ProfileIndex',
             templateUrl: modulesPath + '/profile/views/index.html'
+        });
+
+        $stateProvider.state('profilestore', {
+            url: '/profilestore',
+            controller: 'ProfileStoreIndex',
+            templateUrl: modulesPath + '/profile/views/profilestore.html'
         });
 
         $stateProvider.state('grid', {

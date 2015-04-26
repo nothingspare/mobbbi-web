@@ -4,9 +4,17 @@ app
             {title: 'first'},
             {title: 'second'},
             {title: 'third'},
+            {title: 'fourth'}
+        ];
+        $scope.facebookProfile = UserService.getProfile();
+    }])
+    .controller('ProfileStoreIndex', ['$scope', 'UserService', function ($scope, UserService) {
+        $scope.slides = [
+            {title: 'first'},
+            {title: 'second'},
+            {title: 'third'},
             {title: 'fourth'},
-            {title: 'fifth'},
-            {title: 'sixth'}
+            {title: 'fifth'}
         ];
         $scope.facebookProfile = UserService.getProfile();
     }])

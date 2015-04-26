@@ -2,18 +2,16 @@
     <div class="outer">
         <div class="middle">
             <div class="inner" id="account-popup">
+                <div ui-sref="store" class="x-profile"></div>
                 <ul rn-carousel rn-carousel-buffered rn-carousel-indicator rn-carousel-index="carouselIndex"
                     class="safearea ng-cloak">
                     <li>
-                        <! - - - - - - - - - - - - - page one - - - - - - - - - - - - - >
                         <center>
-                            <div ui-sref="item" class="x-profile">X</div>
                             <div class="setting-titles" style="margin: 20px 0 0 0;">
                                 <f3>User details</f3>
                             </div>
-
-                            <div style="inline: block; width: 220px; margin: 20px 0 0 0;">
-                                <div style=" margin: 8px 0 0 0; float: left;">
+                            <div style="display: inline-block; width: 220px; margin: 20px 0 0 0;">
+                                <div style="margin: 8px 0 0 0; float: left;">
                                     <p>Use Facebook info</p>
                                 </div>
                                 <div style="float: right; margin: 0px 0 0px 0px;">
@@ -32,14 +30,10 @@
                                    placeholder="First name"/>
                             <input class="regular-feild" type="text" ng-model="facebookProfile.last_name"
                                    placeholder="Last name"/>
-                            <br/>
                         </center>
-                        <! - - - - - - - - - - - - page one end - - - - - - - - - - - - >
                     </li>
                     <li>
-                        <! - - - - - - - - - - - - - page two - - - - - - - - - - - - - >
                         <center>
-                            <div ui-sref="item" class="x-profile">X</div>
                             <div class="setting-titles" style="margin: 20px 0 0 0;">
                                 <f3>User details</f3>
                             </div>
@@ -48,22 +42,15 @@
                                    placeholder="Email"/>
                             <input class="regular-feild" type="number" placeholder="Mobile number"/>
                             <input class="regular-feild margin-top" type="password" placeholder="Enter a new password"/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
 
-                            <div style=" margin: 4px 0 10px 0; float: center;">
-                                <div class="btn sml" style="width:214px;">&nbsp;Text me to verify&nbsp;</div>
+                            <div style="margin: 40px 0 0 0;">
+                                <div class="btn" style="width:220px;">&nbsp;Text me to verify&nbsp;</div>
                             </div>
                             <input class="regular-feild" type="password" placeholder="Enter texted code"/>
                         </center>
-                        <! - - - - - - - - - - - - page two end - - - - - - - - - - - - >
                     </li>
                     <li>
-                        <! - - - - - - - - - - - - - page three - - - - - - - - - - - - - >
                         <center>
-                            <div ui-sref="item" class="x-profile">X</div>
                             <div id="content">
                                 <div class="setting-titles" style=" margin: 20px 0 0 0;">
                                     <f3>Enable item purchasing</f3>
@@ -102,240 +89,42 @@
                                 </div>
                             </div>
                         </center>
-                        <! - - - - - - - - - - - - page three end - - - - - - - - - - - - >
                     </li>
                     <li>
-                        <! - - - - - - - - - - - - - page four - - - - - - - - - - - - - >
                         <center>
-                            <div ui-sref="item" class="x-profile">X</div>
-
                             <div class="setting-titles" style=" margin: 20px 0 -10px 0;">
                                 <f3>Apply to open store</f3>
                             </div>
 
-                            <h6 style="margin: 20px;">Email us and tell us about your store.
+                            <h6 style="margin: 30px;">Email us and tell us about your store.
                                 We will then see if you are qualify for a free early adapter account</h6>
 
-                            <div style="margin: 0px 0px 0px 0px;">
-                                <input class="regular-field" type="text" placeholder="Store Facebook page url"/>
-                            </div>
+                            <input class="regular-field" style="width:214px;" type="text" placeholder="Store Facebook page url"/>
 
                             <div style=" margin: 4px 0 10px 0;">
-                                <div class="btn sml" style="width:214px;">&nbsp;Apply now&nbsp;</div>
+                                <div class="btn">&nbsp;Apply now&nbsp;</div>
                             </div>
 
-                            <br>
-                            <br>
-                            <br>
-
-                            <div style="inline: block; width: 240px; margin 0 0 0 0;">
+                            <div style="display: inline-block; width: 240px; margin:70px 0 0 0;">
                                 <div style="float: left; margin: -4px 0px 0px 0;">
-                                    <input id="textfield7" type="text" placeholder="Input code"/>
+                                    <input id="textfield7" type="text" placeholder="Invite code"/>
                                 </div>
 
-                                <div style=" margin: 4px 0 30px 0; float: right;"><a href="#" class="btn sml">&nbsp;Enter&nbsp;</a>
+                                <div style=" margin: 4px 0 30px 0; float: right;"><a ui-sref="profilestore"
+                                                                                     class="btn sml">
+                                    &nbsp;Enter&nbsp;</a>
                                 </div>
                             </div>
 
                         </center>
-                        <! - - - - - - - - - - - page four end - - - - - - - - - - - >
-                        <! - - - - - - - - - - - - - page four - - - - - - - - - - - - - >
-                        <!--<center>-->
-                        <!--<div ui-sref = "item" class = "x-profile">X</div>-->
-                        <!--<div class="setting-titles" style=" margin: 20px 0 -10px 0;">-->
-                        <!--<f3>Open a Mobbbi store while they're still FREE</f3>-->
-                        <!--</div>-->
-                        <!--<h6 style="margin: 20px;">Add your stores Facebook detials if your are registered as a page-->
-                        <!--Admin.</h6>-->
-
-                        <!--<select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">-->
-                        <!--<option value="">Stores Facebook page</option>-->
-                        <!--<option value="extralarge">Brand Hatchers</option>-->
-                        <!--<option value="large">Couturia</option>-->
-                        <!--<option value="medium">Mobbbi</option>-->
-                        <!--</select>-->
-
-                        <!--<div style="margin: 0px 0px 0px 0px;">-->
-                        <!--<input class="regular-feild" type="text" placeholder="Store name"/>-->
-                        <!--</div>-->
-                        <!--<div style="margin: 0px 0px 0px 0px;">-->
-                        <!--<textarea class="input store-desicription"-->
-                        <!--placeholder="Store description (two lines)"></textarea>-->
-                        <!--</div>-->
-                        <!--<div style="margin: -5px 0px 0px 0px;">-->
-                        <!--<textarea class="input store-special-qualities"-->
-                        <!--placeholder="Store special qualities (Three smaller lines)"></textarea>-->
-                        <!--</div>-->
-                        <!--<select class="sml selector1" style=" width: 220px; margin: -5px 0 10px 0;">-->
-                        <!--<option value="">Store catagory</option>-->
-                        <!--<option value="extralarge">Fashion</option>-->
-                        <!--<option value="large">Electronics</option>-->
-                        <!--<option value="medium">Furniture</option>-->
-                        <!--<option value="medium">Toys</option>-->
-                        <!--<option value="medium">Records</option>-->
-                        <!--</select>-->
-                        <!--</center>-->
-                        <! - - - - - - - - - - - page four end - - - - - - - - - - - >
-                    </li>
-                    <li>
-                        <! - - - - - - - - - - - - page four - - - - - - - - - - - - >
-                        <center>
-                            <div ui-sref="item" class="x-profile">X</div>
-                            <div class="setting-titles" style=" margin: 20px 0 0 0;">
-                                <f3>Store detials</f3>
-                            </div>
-                            <input class="regular-feild margin-top" type="text" placeholder="Store location"/>
-
-                            <div style="inline: block; width: 240px; margin: 0 0 0 0;">
-                                <div style="float: left; margin: 0px 0px 0px 0px;">
-                                    <input id="textfield4" type="text" placeholder="City"/>
-                                </div>
-
-                                <div style="float: right; margin: 0px 0px 0px 10px;">
-                                    <input id="textfield5" type="text" placeholder="State"/>
-                                </div>
-
-                                <div style="float: left; margin: -4px 0 0 0;">
-                                    <input id="textfield7" type="text" placeholder="Zipcode"/>
-                                </div>
-
-                                <div style=" margin: 4px 0 16px 0; float: right;"><a href="#" class="btn sml">&nbsp;Verify&nbsp;</a>
-                                </div>
-                            </div>
-
-                            <h6 style="margin: 110px 20px 0px 20px;">Start trading now. Mobbbi holds your balance until
-                                your ready to cash out with PayPal. </h6>
-
-                            <div style="inline: block; width: 240px; margin: 10px 0 0 0;">
-                                <div style="float: left; margin: 0px 0px 0px 0px;">
-                                    <input id="textfield6" type="text" placeholder="PayPal email"/>
-                                </div>
-
-                                <div style=" margin: 8px 0 10px 0; float: right;"><a href="#" class="btn sml">Cash out&nbsp;</a>
-                                </div>
-                            </div>
-                            <div style="inline: block; width: 220px; margin: 75px 0 0 0;">
-                                <div style=" margin: 8px 20px 0 0; float: left;">
-                                    <p>Store visability</p>
-                                </div>
-                                <div style="float: right; margin: 0px 0 0px 0px;">
-                                    <label class="switch-light switch" onclick="">
-                                        <input type="checkbox">
-                                    <span>
-									<span>On</span>
-                                    <span>Off</span>
-                                    </span>
-                                        <a></a>
-                                    </label>
-                                </div>
-                            </div>
-                        </center>
-                        <! - - - - - - - - - - - - page four end - - - - - - - - - - - - >
-                    </li>
-                    <li>
-                        <! - - - - - - - - - - - - page five - - - - - - - - - - - - >
-                        <center>
-                            <div ui-sref="item" class="x-profile">X</div>
-                            <div class="setting-titles" style=" margin: 15px 0 0 0;">
-                                <f3>Image Store</f3>
-                            </div>
-                            <h6 style="margin: 0px 10px 0px 10px;">Upload a full-length background picture of yourself
-                                in your store. Then <strong>zoom</strong> and <strong>move</strong> it over your face,
-                                then crop.</h6>
-
-                            <div ng-controller="CropUploadCtrl">
-                                <input type="file" id="fileInput"/>
-
-                                <div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>
-
-                                <div class="cropArea">
-                                    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
-                                </div>
-
-                            </div>
-                        </center>
-                        <! - - - - - - - - - - - - page five end - - - - - - - - - - - - >
-                    </li>
-                    <li>
-                        <! - - - - - - - - - - - - page six - - - - - - - - - - - - >
-                        <center>
-                            <div ui-sref="item" class="x-profile">X</div>
-                            <div class="setting-titles" style=" margin: 20px 0 20px; 0">
-                                <f3>Promote your store</f3>
-                            </div>
-
-                            <div style="inline: block; width: 240px; margin: 0 0 0px 0;">
-
-                                <div style=" margin: 8px 0 38px 0; float: left;">
-                                    <p>Facebook posting</p>
-                                </div>
-                                <div style="margin: 0px 0 0px 0px; float: right;">
-                                    <label class="switch-light switch" onclick="">
-                                        <input type="checkbox">
-                                    <span>
-					                <span>On</span>
-                                    <span>Off</span>
-                                    </span>
-                                        <a></a>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div style="inline: block; width: 240px; margin: 0 0 0 0;">
-
-                                <div style=" float: left; margin: 0 0 32px 0; width:131px;">
-                                    <p>Email Gmail contacts</p>
-                                </div>
-
-                                <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
-                                </div>
-                            </div>
-
-                            <div style="inline: block; width: 240px; margin: -20px 0 0 0;">
-
-                                <div style=" float: left; margin: 0px 0 0 0px;">
-                                    <p>SMS phone contacts</p>
-                                </div>
-
-                                <div style="float: right;"><a href="#" class="btn sml">&nbsp;Now&nbsp;</a>
-                                </div>
-                            </div>
-
-                            <div style="inline: block; width: 240px; margin: 220px 0 0px 0;">
-
-                                <div style=" margin: 8px 0 0 0px; float: left;">
-                                    <p>eBay item posting</p>
-                                </div>
-
-                                <div style="margin: 0px 0 16px 0px; float: right;">
-                                    <label class="switch-light switch" onclick="">
-                                        <input type="checkbox">
-                                    <span>
-					                <span>On</span>
-                                    <span>Off</span>
-                                    </span>
-                                        <a></a>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div style=" width: 240px; margin: 0px 0 20px 0;">
-                                <h6 style="margin: 270px 0px 0px 0px;">Share, post and promote you store url.</h6>
-
-                                <div class="url-text" style=" margin: 10px 0 0 0;">
-                                    <h4>mobbbi.com/mystorename</h4>
-                                </div>
-                            </div>
-                        </center>
-                        <! - - - - - - - - - - - - page six end - - - - - - - - - - - - >
-                    </li>
                 </ul>
 
-                <div style=" margin: 4px 0 30px 0; float: center;">
+                <div style="margin:4px 0 30px 0;">
                     <div class="btn sml">&nbsp;Done&nbsp;</div>
                 </div>
                 <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides"
-                     rn-carousel-index="carouselIndex"></div>
+                     rn-carousel-index="carouselIndex">
+                </div>
             </div>
         </div>
     </div>

@@ -3,86 +3,55 @@
         <center>
             <form class="form-horizontal" role="form">
                 <div id="content-popup">
-                    <!--<div style="margin: 70px 0px 20px 0px;"><a href="#" class="fast-tap btn sml">&nbsp;Edit item pics&nbsp;</a>-->
-                    <!--</div>-->
-                    <!--<div class="btn sml" ng-file-select ng-model="files">&nbsp;Choose item pics&nbsp;</div>-->
-                    <br>
-
-                    <div ng-controller="ShrinkUploadImageCtrl">
-                        <input id="inputImage2"
-                               type="file"
-                               accept="image/*"
-                               imagesh="image2"
-                               resize-max-height="300"
-                               resize-max-width="300"
-                               resize-quality="0.7" />
-                        <img ng-show="image2" ng-src="{{image2.resized.dataURL}}"/>
-                        <div class = "btn sml" type="submit" ng-click="single(image2.resized)">&nbsp;Upload File&nbsp;</div>
-                    </div>
-
-
-                    <!--<div ng-controller="CropUploadCtrl">-->
-                        <!--<input type="file" id="fileInput"/>-->
-                        <!--<div class="cropArea">-->
-                            <!--<img-crop image="myImage" result-image="myCroppedImage"></img-crop>-->
-                        <!--</div>-->
-                        <!--<div class="btn sml" ng-click="uploadCrop()">&nbsp;Upload Crop&nbsp;</div>-->
-                    <!--</div>-->
-                    <!--<div class="btn sml" ng-file-select ng-model="files" ng-file-change="upload(files)">&nbsp;Edit Item-->
-                        <!--Pics&nbsp;</div>-->
-                    <!--Drop File:-->
-                    <!--<div ng-file-drop ng-model="files" class="drop-box" drag-over-class="dragover" ng-multiple="true" allow-dir="true" accept=".jpg,.png,.pdf">Drop Images or PDFs files here</div>-->
-                    <!--<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>-->
-
-                    <div class="upload-pic-previews-wrapper">
-                        <div class="upload-pic-previews" ng-repeat="thumb in slides">
-                            <img width="44" height="70" ng-src="{{thumb.image_url}}"/>
-                            <span class="x-but" ng-click="removeImage(thumb)">X</span>
-                        </div>
-                    </div>
-
-                    <div style="margin: 20px 0px 0px 0px;">
-                        <textarea ng-model="item.description" class="input item-desicription-input"
-                                  placeholder="Item description"></textarea>
-                    </div>
-
-                    <div style="margin: 0px 0px 0px 0px;">
-                        <input ng-model="item.price" type="number" class="input" placeholder="Price:"></input>
-                    </div>
-
-                    <div style="margin: 0px 0px 0px 0px;">
-                        <input ng-model="item.size" type="text" class="input" placeholder="Size:"></input>
-                    </div>
-
-                    <div style="margin: 0px 0px 0px 0px;">
-                        <input ng-model="item.quantity" type="number" class="input" placeholder="Quantity:"></input>
-                    </div>
-
-                    <div style="width: 100%; margin: 6px 0 0px 0;">
-                        <select class="selector1" style="margin: -2px 0 20px 0; width: 220px;">
-                            <option value="">Category</option>
-                            <option value="1">Accessories</option>
-                            <option value="2">Bags</option>
-                            <option value="3">Casual</option>
-                            <option value="4">Coats</option>
-                            <option value="5">Dresses</option>
-                            <option value="6">Hats</option>
-                            <option value="7">Trousers</option>
-                            <option value="8">Shoes</option>
-                            <option value="9">Sports</option>
-                            <option value="10">Suits</option>
-                            <option value="11">Sunglasses</option>
-                            <option value="12">Swimwear</option>
-                        </select>
-                    </div>
-
-                    <div style="margin: 10px 0px 20px 0px;"><a ng-click="save()" class="fast-tap btn sml">&nbsp;Post
-                        changes&nbsp;</a>
-                    </div>
-
-                    <div style="margin: 30px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete
+                    <div style="margin: 15px 0px 20px 0px;"><a href="#" class="fast-tap btn sml delete">&nbsp;Delete
                         item&nbsp;</a>
                     </div>
+                    <div ng-controller="ShrinkUploadImageCtrl">
+                        <div style="width:240px;display: inline-block;">
+                            <input class="custom-file-input" id="inputImage2"
+                                   type="file"
+                                   accept="image/*"
+                                   imagesh="image2"
+                                   resize-max-height="300"
+                                   resize-max-width="300"
+                                   resize-quality="0.7"/>
+                            <img ng-show="image2" ng-src="{{image2.resized.dataURL}}"/>
+                            <div class="btn sml" style="margin-top:-16px;" type="submit"
+                                 ng-click="single(image2.resized)">Upload
+                            </div>
+                        </div>
+
+                        <div class="upload-pic-previews-wrapper">
+                            <div class="upload-pic-previews" ng-repeat="thumb in slides">
+                                <img width="44" height="70" ng-src="{{thumb.image_url}}"/>
+                                <span class="x-but" ng-click="removeImage(thumb)">X</span>
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0px 0px 0px;">
+                        <textarea ng-model="item.description" class="input item-desicription-input"
+                                  placeholder="Item description"></textarea>
+                        </div>
+
+                        <div style="display:inline-block;width:220px;margin:0 0;">
+                            <div style="float: left; margin: 0px 0px 0px 0px;"><input  ng-model="item.price" id="textfield8" type="number" placeholder="Price:"></div>
+
+                            <div style="float: left; margin: 0px 0px 0px 10px;"><input  ng-model="item.size" id="textfield3" type="text" placeholder="Size"></div>
+
+                            <div style="float: left; margin: 0px 0px 0px 10px;"><input ng-model="item.quantity" id="textfield3" type="number" placeholder="#"></div>
+
+                        </div>
+
+                        <div style="width: 100%; margin: 6px 0 0px 0;">
+                            <select class="selector1" style="margin: -2px 0 20px 0; width: 220px;">
+                                <option value="">Store pick up</option>
+                            </select>
+                        </div>
+
+                        <div style="margin: 10px 0px 20px 0px;"><a ng-click="save()" class="fast-tap btn sml">&nbsp;Post
+                            changes&nbsp;</a>
+                        </div>
+
         </center>
         </form>
     </div>

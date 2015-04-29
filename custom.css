@@ -1500,12 +1500,9 @@ h3 {
     position: relative;
     margin: 0 auto;
     width: 310px;
-    margin-bottom: 0px;
-    /** add to split up item listing on item page **/
-
     padding: 2px;
     background-color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 10px;
+    border-bottom: 0;
 }
 
 /*/ - - - - - - - app icons - - - - - - - - - - /*/
@@ -1549,6 +1546,12 @@ h3 {
 .buyer-message-small {
     background: url(../img/icons.svg);
     background-position: -207px -9px;
+    background-size: 900px 35px;
+}
+
+.seller-message-small {
+    background: url(../img/icons.svg);
+    background-position: -66px -9px;
     background-size: 900px 35px;
 }
 
@@ -1691,7 +1694,7 @@ h3 {
 
 .buyer-message-circle {
     background: url(../img/icons.svg);
-    background-position: -800px -0px;
+    background-position: -799px -0px;
     background-size: 1200px 50px;
 }
 
@@ -1853,7 +1856,7 @@ h3 {
     float: left;
     margin: 0 auto;
     position: relative;
-    margin: -35px 0 0 0;
+    margin: -16px 0 0 0;
     padding: 0 5px 0 5px;
 }
 
@@ -1861,7 +1864,7 @@ h3 {
     float: right;
     margin: 0 auto;
     position: relative;
-    margin: -35px 0 0 0;
+    margin: -16px 0 0 0;
     padding: 0 5px 0 5px;
 }
 
@@ -1889,7 +1892,7 @@ h3 {
     margin: 0 auto;
     width: 40%;
     position: relative;
-    margin: -35px 360px 0 0;
+    margin: -16px 360px 0 0;
     padding: 0 0px 0 115px;
 }
 
@@ -2606,7 +2609,6 @@ input,
 
 #textfield1 {
     width: 57px;
-    height: 22px;
 }
 
 #textfield2 {
@@ -2634,7 +2636,7 @@ input,
 }
 
 #textfield8 {
-    width: 88px;
+    width: 64px;
 }
 
 #textfield9 {
@@ -3038,7 +3040,7 @@ input:-moz-placeholder {
     width: 100%;
     height: 0px;
     text-align: center;
-    top: -20px;
+    top: 0px;
     position: relative;
     bottom: 20px;
     cursor: pointer;
@@ -3189,10 +3191,6 @@ ul.safearea a {
     z-index: 200;
 }
 
-#inputImage2 {
-    width: 223px;
-}
-
 .x-but {
     cursor: pointer;
     position: relative;
@@ -3287,15 +3285,15 @@ html:before {
     background-image: url('img/avatar4.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 8em;
+    height: 8em;
     margin-top: 20px;
     margin-left: 30px;
 }
 
 /*Profile store section begin*/
 .profile-store .page1 .regular-feild {
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
 }
 
 .profile-store .page3 .custom-file-input {
@@ -3343,12 +3341,74 @@ html:before {
     background: #E4E4E4;
     overflow: hidden;
     width: 240px;
-    height: 200px;
+    height: 190px;
 }
 
 .profile-store .page4 h4 {
-    margin-top:25px;
     color: #555;
 }
 
 /*Profile store section end*/
+
+/*Sellorbuy section start*/
+.sellorbuy input {
+    width: 140px;
+    height: 24px;
+}
+
+/*Sellorbuy section end*/
+/*Item start*/
+.grid-container.itemview {
+    margin: 60px 0 0 0;
+}
+
+.action-icon {
+    text-align: center;
+    float: left;
+    width: 50px;
+    padding: 0 0 0 22px;
+}
+
+.itemview .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.itemview .custom-file-input::before {
+    content: 'Choose image';
+    display: inline-block;
+    width: 180px;
+    height: 36px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 18px;
+    color: #fff;
+    background-color: #f37878;
+    padding: 6px 10px 6px 12px;
+}
+
+.itemview .custom-file-input:hover::before {
+    color: #f37878;
+    background-color: #eee;
+}
+
+.itemview .custom-file-input {
+    width: 135px;
+    overflow: hidden;
+    padding: 0 0 0 0;
+    height: 34px;
+}
+
+.itemview .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.itemfeed #item-large-pic{margin-bottom:21px;}
+/*Seller comment starts*/
+.itemview .comment .icon-message {
+    vertical-align: top;
+}
+/*Seller comment end*/
+
+/*Item end*/

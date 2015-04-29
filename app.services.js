@@ -79,7 +79,10 @@ app
                 if ($window.sessionStorage.bgUrl) $rootScope.bgUrl = $window.sessionStorage.bgUrl;
             },
             initIsSeller: function(){
-                if($window.sessionStorage.isSeller) $rootScope.isSeller = $window.sessionStorage.isSeller;
+                if($window.sessionStorage.isSeller == "true")
+                    $rootScope.isSeller = true;
+                else
+                    $rootScope.isSeller = false;
             },
             setIsSeller: function(value){
                 $window.sessionStorage.isSeller = $rootScope.isSeller = value;
